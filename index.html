@@ -1,1223 +1,1199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dmitrii Smirnov - Software Engineer</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
     <nav>
-        <div class="nav-container">
-            <div class="logo">DS</div>
-            
-            <!-- Theme Switcher -->
-            <div class="theme-switcher">
-                <button class="theme-btn active" data-theme="main">Main</button>
-                <button class="theme-btn" data-theme="retro">Retro</button>
-                <button class="theme-btn" data-theme="dark">Dark</button>
-                <button class="theme-btn" data-theme="matrix">Matrix</button>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="projects/prompt-suite.html">Projects</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <div class="logo">DS</div>
+
+        <!-- Theme Switcher -->
+        <div class="theme-switcher">
+          <button class="theme-btn active" data-theme="main">Main</button>
+          <button class="theme-btn" data-theme="retro">Retro</button>
+          <button class="theme-btn" data-theme="dark">Dark</button>
+          <button class="theme-btn" data-theme="matrix">Matrix</button>
         </div>
+
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="projects/prompt-suite.html">Projects</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-background">
-                <div class="floating-shapes">
-                    <div class="shape shape-1" data-matrix-code="01001"></div>
-                    <div class="shape shape-2" data-matrix-code="11010"></div>
-                    <div class="shape shape-3" data-matrix-code="10110"></div>
-                    <div class="shape shape-4" data-matrix-code="01101"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">
-                            <span class="greeting">Hi, I'm</span>
-                            <span class="name">Dmitrii Smirnov</span>
-                        </h1>
-                        <h2 class="hero-subtitle">
-                            <span class="typewriter" data-text="Backend Engineer,Smart Contract Developer,Node.js & TypeScript Expert,DeFi Protocol Architect">Backend Engineer & Smart Contract Developer</span>
-                        </h2>
-                        <p class="hero-description">
-                            Specializing in Node.js backend development, DeFi protocols, and smart contracts. 
-                            8+ years of experience building scalable applications, cross-chain protocols, 
-                            and automation tools that serve thousands of users worldwide.
-                        </p>
-                        
-                        <div class="hero-actions">
-                            <a href="#about" class="btn btn-primary">
-                                Learn More
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                                </svg>
-                            </a>
-                            <a href="mailto:dmitry.sonder@gmail.com" class="btn btn-secondary">
-                                Get In Touch
-                            </a>
-                        </div>
+      <section id="home" class="hero">
+        <div class="hero-background">
+          <div class="floating-shapes">
+            <div class="shape shape-1" data-matrix-code="01001"></div>
+            <div class="shape shape-2" data-matrix-code="11010"></div>
+            <div class="shape shape-3" data-matrix-code="10110"></div>
+            <div class="shape shape-4" data-matrix-code="01101"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">
+                <span class="greeting">Hi, I'm</span>
+                <span class="name">Dmitrii Smirnov</span>
+              </h1>
+              <h2 class="hero-subtitle">
+                <span class="typewriter" data-text="Backend Engineer,Smart Contract Developer,Node.js & TypeScript Expert,DeFi Protocol Architect"
+                  >Backend Engineer & Smart Contract Developer</span
+                >
+              </h2>
+              <p class="hero-description">
+                Specializing in Node.js backend development, DeFi protocols, and smart contracts. 8+ years of experience building scalable applications,
+                cross-chain protocols, and automation tools that serve thousands of users worldwide.
+              </p>
 
-                        <div class="social-links">
-                            <a href="https://github.com/dmitrysonder" target="_blank" aria-label="GitHub">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="mailto:dmitry.sonder@gmail.com" aria-label="Email">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <div class="profile-card">
-                            <div class="profile-avatar">
-                                <div class="avatar-placeholder">DS</div>
-                            </div>
-                            <div class="profile-info">
-                                <div class="status-indicator">
-                                    <span class="status-dot"></span>
-                                    Available for opportunities
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+              <div class="hero-actions">
+                <a href="#about" class="btn btn-primary">
+                  Learn More
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
+                <a href="mailto:dmitry.sonder@gmail.com" class="btn btn-secondary"> Get In Touch </a>
+              </div>
 
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Backend Engineer & Smart Contract Developer</p>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            I'm a passionate Backend Engineer and Smart Contract Developer with 8+ years of experience 
-                            building scalable web applications and DeFi protocols. My expertise spans from traditional 
-                            backend development with Node.js and TypeScript to cutting-edge blockchain technologies 
-                            including Solidity and cross-chain protocols.
-                        </p>
-                        <p>
-                            I specialize in creating robust backend systems, 
-                            REST APIs, smart contracts, and DeFi applications. I have extensive experience with AWS, 
-                            PostgreSQL, and modern JavaScript frameworks. I'm also passionate about automation, 
-                            having built comprehensive testing frameworks and CI/CD pipelines.
-                        </p>
-                    </div>
-                </div>
+              <div class="social-links">
+                <a href="https://github.com/dmitrysonder" target="_blank" aria-label="GitHub">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:dmitry.sonder@gmail.com" aria-label="Email">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </a>
+              </div>
             </div>
-        </section>
+            <div class="hero-image">
+              <div class="profile-card">
+                <div class="profile-avatar">
+                  <div class="avatar-placeholder">DS</div>
+                </div>
+                <div class="profile-info">
+                  <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    Available for opportunities
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Skills & Technologies</h2>
-                    <p class="section-subtitle">Tools and technologies I work with</p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Backend & APIs</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">NestJS</span>
-                            <span class="skill-tag">tRPC</span>
-                            <span class="skill-tag">GraphQL</span>
-                            <span class="skill-tag">REST API</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Blockchain & DeFi</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">Solidity</span>
-                            <span class="skill-tag">Hardhat</span>
-                            <span class="skill-tag">EVM</span>
-                            <span class="skill-tag">LayerZero</span>
-                            <span class="skill-tag">Axelar</span>
-                            <span class="skill-tag">Web3.js</span>
-                            <span class="skill-tag">Smart Contracts</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Databases & Cloud</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">Redis</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Google Cloud</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Prisma</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Frontend & Tools</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">WebdriverIO</span>
-                            <span class="skill-tag">Google Apps Script</span>
-                        </div>
-                    </div>
-                </div>
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Backend Engineer & Smart Contract Developer</p>
+          </div>
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                I'm a passionate Backend Engineer and Smart Contract Developer with 8+ years of experience building scalable web applications and DeFi
+                protocols. My expertise spans from traditional backend development with Node.js and TypeScript to cutting-edge blockchain technologies including
+                Solidity and cross-chain protocols.
+              </p>
+              <p>
+                I specialize in creating robust backend systems, REST APIs, smart contracts, and DeFi applications. I have extensive experience with AWS,
+                PostgreSQL, and modern JavaScript frameworks. I'm also passionate about automation, having built comprehensive testing frameworks and CI/CD
+                pipelines.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="skills-progress-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Expertise Level</h2>
-                    <p class="section-subtitle">My proficiency in key technologies</p>
-                </div>
-                <div class="skills-progress-grid">
-                    <div class="skill-progress-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Node.js & TypeScript</span>
-                            <span class="skill-level">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-level="95"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Solidity & Smart Contracts</span>
-                            <span class="skill-level">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-level="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-item">
-                        <div class="skill-info">
-                            <span class="skill-name">PostgreSQL & Database Design</span>
-                            <span class="skill-level">88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-level="88"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-item">
-                        <div class="skill-info">
-                            <span class="skill-name">AWS & Cloud Architecture</span>
-                            <span class="skill-level">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-level="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-item">
-                        <div class="skill-info">
-                            <span class="skill-name">React & Frontend Development</span>
-                            <span class="skill-level">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-level="80"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress-item">
-                        <div class="skill-info">
-                            <span class="skill-name">DeFi Protocols & Cross-chain</span>
-                            <span class="skill-level">92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-level="92"></div>
-                        </div>
-                    </div>
-                </div>
+      <section id="skills" class="skills-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">Tools and technologies I work with</p>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>Backend & APIs</h3>
+              <div class="skills-list">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">NestJS</span>
+                <span class="skill-tag">tRPC</span>
+                <span class="skill-tag">GraphQL</span>
+                <span class="skill-tag">REST API</span>
+              </div>
             </div>
-        </section>
+            <div class="skill-category">
+              <h3>Blockchain & DeFi</h3>
+              <div class="skills-list">
+                <span class="skill-tag">Solidity</span>
+                <span class="skill-tag">Hardhat</span>
+                <span class="skill-tag">EVM</span>
+                <span class="skill-tag">LayerZero</span>
+                <span class="skill-tag">Axelar</span>
+                <span class="skill-tag">Web3.js</span>
+                <span class="skill-tag">Smart Contracts</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Databases & Cloud</h3>
+              <div class="skills-list">
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Redis</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Google Cloud</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Prisma</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Frontend & Tools</h3>
+              <div class="skills-list">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Next.js</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">WebdriverIO</span>
+                <span class="skill-tag">Google Apps Script</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="experience" class="experience-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Experience</h2>
-                    <p class="section-subtitle">My professional journey</p>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">February 2025 - Present</div>
-                            <h3>Backend Engineer</h3>
-                            <p class="company">Fundraise Up (USA)</p>
-                            <p class="description">
-                                Developing and maintaining integrations with third-party CRM systems for a leading 
-                                fundraising platform serving nonprofits worldwide.
-                            </p>
-                            <div class="technologies">
-                                <span>Node.js</span>
-                                <span>TypeScript</span>
-                                <span>REST API</span>
-                                <span>CRM Integration</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">January 2021 - Present</div>
-                            <h3>CTO / Senior Software Engineer</h3>
-                            <p class="company">InterSwap (DeFi Startup)</p>
-                            <p class="description">
-                                Led technical development as CTO from inception. Designed and developed core smart contracts 
-                                for cross-chain AMM protocol with LayerZero and Axelar messaging. Built backend API, managed 
-                                team of 3 developers + 1 QA, and set up AWS infrastructure with CI/CD.
-                            </p>
-                            <div class="technologies">
-                                <span>Solidity</span>
-                                <span>LayerZero</span>
-                                <span>Axelar</span>
-                                <span>NestJS</span>
-                                <span>PostgreSQL</span>
-                                <span>AWS</span>
-                                <span>Docker</span>
-                                <span>React</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">September 2023 - July 2024</div>
-                            <h3>Backend Engineer</h3>
-                            <p class="company">Skillbox (English Learning Platform)</p>
-                            <p class="description">
-                                Developed new features and maintained English learning platform eng.skillbox.ru. 
-                                Implemented SQL triggers for event sourcing that reduced DB load by 30%. 
-                                Integrated payment services including Sber, Tinkoff, and Yandex Split.
-                            </p>
-                            <div class="technologies">
-                                <span>TypeScript</span>
-                                <span>Prisma ORM</span>
-                                <span>PostgreSQL</span>
-                                <span>tRPC</span>
-                                <span>GraphQL</span>
-                                <span>Google Cloud</span>
-                                <span>Next.js</span>
-                                <span>Redis</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">February 2019 - May 2023</div>
-                            <h3>Software Engineer / CEO</h3>
-                            <p class="company">Spreadsheet Fund</p>
-                            <p class="description">
-                                Built from scratch a Google Sheets addon for hedge fund automation with 1600+ users 
-                                and 10+ public funds. Developed API adapters for 15+ crypto exchanges, payment processing 
-                                via Coinbase Commerce, and comprehensive fund management tools.
-                            </p>
-                            <div class="technologies">
-                                <span>Google Apps Script</span>
-                                <span>Node.js</span>
-                                <span>JavaScript</span>
-                                <span>HTML/CSS</span>
-                                <span>SQL</span>
-                                <span>Coinbase Commerce</span>
-                                <span>Google APIs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">May 2021 - January 2022</div>
-                            <h3>Senior Backend & Solidity Engineer</h3>
-                            <p class="company">Vaulty.fi (DeFi Yield Optimizer)</p>
-                            <p class="description">
-                                Developed smart contracts for DeFi yield strategies on Venus, Alpaca, and Belt.fi protocols. 
-                                Built serverless backend with AWS Lambda and DynamoDB. Created token sale, vesting, 
-                                and governance contracts, plus TheGraph subgraphs.
-                            </p>
-                            <div class="technologies">
-                                <span>Solidity</span>
-                                <span>AWS Lambda</span>
-                                <span>DynamoDB</span>
-                                <span>React</span>
-                                <span>Web3</span>
-                                <span>TheGraph</span>
-                                <span>DeFi Protocols</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">December 2019 - June 2021</div>
-                            <h3>Senior QA Automation Engineer</h3>
-                            <p class="company">EPAM Systems</p>
-                            <p class="description">
-                                Developed and maintained automation testing framework using WebdriverIO and TypeScript. 
-                                Created PostgreSQL integration module and medical data parsing tools. 
-                                Contributed to framework architecture and test development.
-                            </p>
-                            <div class="technologies">
-                                <span>WebdriverIO</span>
-                                <span>TypeScript</span>
-                                <span>PostgreSQL</span>
-                                <span>Test Automation</span>
-                                <span>QA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">October 2018 - December 2018</div>
-                            <h3>Ethereum Smart Contract Developer</h3>
-                            <p class="company">AltTokenFund / CrescoFinance</p>
-                            <p class="description">
-                                Developed backend and smart contracts for hedge fund automation with ERC20 tokens. 
-                                Created Google Sheets integration, Telegram bot for transaction signing, 
-                                and technical whitepaper. Deployed system to 2 additional public funds.
-                            </p>
-                            <div class="technologies">
-                                <span>Solidity</span>
-                                <span>Node.js</span>
-                                <span>Web3.js</span>
-                                <span>Telegram Bot</span>
-                                <span>ERC20</span>
-                                <span>Google Sheets</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section class="skills-progress-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Expertise Level</h2>
+            <p class="section-subtitle">My proficiency in key technologies</p>
+          </div>
+          <div class="skills-progress-grid">
+            <div class="skill-progress-item">
+              <div class="skill-info">
+                <span class="skill-name">Node.js & TypeScript</span>
+                <span class="skill-level">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-level="95"></div>
+              </div>
             </div>
-        </section>
+            <div class="skill-progress-item">
+              <div class="skill-info">
+                <span class="skill-name">Solidity & Smart Contracts</span>
+                <span class="skill-level">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-level="90"></div>
+              </div>
+            </div>
+            <div class="skill-progress-item">
+              <div class="skill-info">
+                <span class="skill-name">PostgreSQL & Database Design</span>
+                <span class="skill-level">88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-level="88"></div>
+              </div>
+            </div>
+            <div class="skill-progress-item">
+              <div class="skill-info">
+                <span class="skill-name">AWS & Cloud Architecture</span>
+                <span class="skill-level">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-level="85"></div>
+              </div>
+            </div>
+            <div class="skill-progress-item">
+              <div class="skill-info">
+                <span class="skill-name">React & Frontend Development</span>
+                <span class="skill-level">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-level="80"></div>
+              </div>
+            </div>
+            <div class="skill-progress-item">
+              <div class="skill-info">
+                <span class="skill-name">DeFi Protocols & Cross-chain</span>
+                <span class="skill-level">92%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-level="92"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="experience-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">My professional journey</p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">February 2025 - Present</div>
+                <h3>Backend Engineer</h3>
+                <p class="company">Fundraise Up (USA)</p>
+                <p class="description">
+                  Developing and maintaining integrations with third-party CRM systems for a leading fundraising platform serving nonprofits worldwide.
+                </p>
+                <div class="technologies">
+                  <span>Node.js</span>
+                  <span>TypeScript</span>
+                  <span>REST API</span>
+                  <span>CRM Integration</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">January 2021 - Present</div>
+                <h3>CTO / Senior Software Engineer</h3>
+                <p class="company">InterSwap (DeFi Startup)</p>
+                <p class="description">
+                  Led technical development as CTO from inception. Designed and developed core smart contracts for cross-chain AMM protocol with LayerZero and
+                  Axelar messaging. Built backend API, managed team of 3 developers + 1 QA, and set up AWS infrastructure with CI/CD.
+                </p>
+                <div class="technologies">
+                  <span>Solidity</span>
+                  <span>LayerZero</span>
+                  <span>Axelar</span>
+                  <span>NestJS</span>
+                  <span>PostgreSQL</span>
+                  <span>AWS</span>
+                  <span>Docker</span>
+                  <span>React</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">September 2023 - July 2024</div>
+                <h3>Backend Engineer</h3>
+                <p class="company">Skillbox (English Learning Platform)</p>
+                <p class="description">
+                  Developed new features and maintained English learning platform eng.skillbox.ru. Implemented SQL triggers for event sourcing that reduced DB
+                  load by 30%. Integrated payment services including Sber, Tinkoff, and Yandex Split.
+                </p>
+                <div class="technologies">
+                  <span>TypeScript</span>
+                  <span>Prisma ORM</span>
+                  <span>PostgreSQL</span>
+                  <span>tRPC</span>
+                  <span>GraphQL</span>
+                  <span>Google Cloud</span>
+                  <span>Next.js</span>
+                  <span>Redis</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">February 2019 - May 2023</div>
+                <h3>Software Engineer / CEO</h3>
+                <p class="company">Spreadsheet Fund</p>
+                <p class="description">
+                  Built from scratch a Google Sheets addon for hedge fund automation with 1600+ users and 10+ public funds. Developed API adapters for 15+
+                  crypto exchanges, payment processing via Coinbase Commerce, and comprehensive fund management tools.
+                </p>
+                <div class="technologies">
+                  <span>Google Apps Script</span>
+                  <span>Node.js</span>
+                  <span>JavaScript</span>
+                  <span>HTML/CSS</span>
+                  <span>SQL</span>
+                  <span>Coinbase Commerce</span>
+                  <span>Google APIs</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">May 2021 - January 2022</div>
+                <h3>Senior Backend & Solidity Engineer</h3>
+                <p class="company">Vaulty.fi (DeFi Yield Optimizer)</p>
+                <p class="description">
+                  Developed smart contracts for DeFi yield strategies on Venus, Alpaca, and Belt.fi protocols. Built serverless backend with AWS Lambda and
+                  DynamoDB. Created token sale, vesting, and governance contracts, plus TheGraph subgraphs.
+                </p>
+                <div class="technologies">
+                  <span>Solidity</span>
+                  <span>AWS Lambda</span>
+                  <span>DynamoDB</span>
+                  <span>React</span>
+                  <span>Web3</span>
+                  <span>TheGraph</span>
+                  <span>DeFi Protocols</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">December 2019 - June 2021</div>
+                <h3>Senior QA Automation Engineer</h3>
+                <p class="company">EPAM Systems</p>
+                <p class="description">
+                  Developed and maintained automation testing framework using WebdriverIO and TypeScript. Created PostgreSQL integration module and medical data
+                  parsing tools. Contributed to framework architecture and test development.
+                </p>
+                <div class="technologies">
+                  <span>WebdriverIO</span>
+                  <span>TypeScript</span>
+                  <span>PostgreSQL</span>
+                  <span>Test Automation</span>
+                  <span>QA</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">October 2018 - December 2018</div>
+                <h3>Ethereum Smart Contract Developer</h3>
+                <p class="company">AltTokenFund / CrescoFinance</p>
+                <p class="description">
+                  Developed backend and smart contracts for hedge fund automation with ERC20 tokens. Created Google Sheets integration, Telegram bot for
+                  transaction signing, and technical whitepaper. Deployed system to 2 additional public funds.
+                </p>
+                <div class="technologies">
+                  <span>Solidity</span>
+                  <span>Node.js</span>
+                  <span>Web3.js</span>
+                  <span>Telegram Bot</span>
+                  <span>ERC20</span>
+                  <span>Google Sheets</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="mailto:dmitry.sonder@gmail.com">Contact</a>
-                    <a href="https://github.com/dmitrysonder" target="_blank">GitHub</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="mailto:dmitry.sonder@gmail.com">Contact</a>
+            <a href="https://github.com/dmitrysonder" target="_blank">GitHub</a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
+        });
+      });
+
+      // Mobile navigation toggle
+      const navToggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        navToggle.classList.toggle("active");
+      });
+
+      // Update active navigation link on scroll
+      window.addEventListener("scroll", () => {
+        const sections = document.querySelectorAll("section[id]");
+        const scrollPos = window.scrollY + 100;
+
+        sections.forEach((section) => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute("id");
+          const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+
+          if (scrollPos >= top && scrollPos < top + height) {
+            document.querySelectorAll(".nav-links a").forEach((link) => {
+              link.classList.remove("active");
+            });
+            if (navLink) {
+              navLink.classList.add("active");
+            }
+          }
+        });
+      });
+
+      // Волновой эффект при клике
+      function createRipple(e, element) {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Основная волна
+        const ripple = document.createElement("div");
+        ripple.className = "ripple";
+        ripple.style.left = x - 50 + "px";
+        ripple.style.top = y - 50 + "px";
+        ripple.style.width = "100px";
+        ripple.style.height = "100px";
+
+        // Дополнительная волна
+        const rippleWave = document.createElement("div");
+        rippleWave.className = "ripple-wave";
+        rippleWave.style.left = x - 30 + "px";
+        rippleWave.style.top = y - 30 + "px";
+        rippleWave.style.width = "60px";
+        rippleWave.style.height = "60px";
+
+        element.appendChild(ripple);
+        element.appendChild(rippleWave);
+
+        // Удаляем элементы после анимации
+        setTimeout(() => {
+          if (ripple.parentNode) {
+            ripple.parentNode.removeChild(ripple);
+          }
+        }, 800);
+
+        setTimeout(() => {
+          if (rippleWave.parentNode) {
+            rippleWave.parentNode.removeChild(rippleWave);
+          }
+        }, 1200);
+      }
+
+      // Добавляем обработчик клика для hero секции
+      const heroSection = document.querySelector(".hero");
+      if (heroSection) {
+        heroSection.addEventListener("click", (e) => {
+          // Проверяем, что клик не по кнопке или ссылке
+          if (!e.target.closest(".btn") && !e.target.closest("a")) {
+            createRipple(e, heroSection);
+            createParticles(e, heroSection);
+            createTempShapes(e, heroSection);
+            playClickSound();
+          }
+        });
+      }
+
+      // Функция создания частиц
+      function createParticles(e, element) {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Создаем 8-12 частиц
+        const particleCount = Math.random() * 4 + 8;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+
+          // Случайное смещение от точки клика
+          const offsetX = (Math.random() - 0.5) * 60;
+          const offsetY = (Math.random() - 0.5) * 60;
+
+          particle.style.left = x + offsetX + "px";
+          particle.style.top = y + offsetY + "px";
+
+          // Случайный размер
+          const size = Math.random() * 4 + 2;
+          particle.style.width = size + "px";
+          particle.style.height = size + "px";
+
+          // Случайная задержка анимации
+          particle.style.animationDelay = Math.random() * 0.5 + "s";
+
+          element.appendChild(particle);
+
+          // Удаляем частицу после анимации
+          setTimeout(() => {
+            if (particle.parentNode) {
+              particle.parentNode.removeChild(particle);
+            }
+          }, 2500);
+        }
+      }
+
+      // Эффект следования курсора
+      let cursorGlow = null;
+
+      if (heroSection) {
+        // Создаем элемент свечения курсора
+        cursorGlow = document.createElement("div");
+        cursorGlow.className = "cursor-glow";
+        heroSection.appendChild(cursorGlow);
+
+        heroSection.addEventListener("mousemove", (e) => {
+          const rect = heroSection.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          cursorGlow.style.left = x - 10 + "px";
+          cursorGlow.style.top = y - 10 + "px";
+          cursorGlow.style.opacity = "1";
         });
 
-        // Mobile navigation toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            navToggle.classList.toggle('active');
+        heroSection.addEventListener("mouseleave", () => {
+          cursorGlow.style.opacity = "0";
         });
 
-        // Update active navigation link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPos = window.scrollY + 100;
+        heroSection.addEventListener("mouseenter", () => {
+          cursorGlow.style.opacity = "1";
+        });
+      }
 
-            sections.forEach(section => {
-                const top = section.offsetTop;
-                const height = section.offsetHeight;
-                const id = section.getAttribute('id');
-                const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+      // Добавляем специальные эффекты для шаров
+      const shapes = document.querySelectorAll(".shape");
+      shapes.forEach((shape, index) => {
+        shape.addEventListener("click", (e) => {
+          e.stopPropagation();
 
-                if (scrollPos >= top && scrollPos < top + height) {
-                    document.querySelectorAll('.nav-links a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    if (navLink) {
-                        navLink.classList.add('active');
-                    }
-                }
-            });
+          // Создаем более яркий эффект для шаров
+          const rect = shape.getBoundingClientRect();
+          const heroRect = heroSection.getBoundingClientRect();
+          const x = e.clientX - heroRect.left;
+          const y = e.clientY - heroRect.top;
+
+          // Специальный эффект для шара
+          const shapeRipple = document.createElement("div");
+          shapeRipple.className = "ripple";
+          shapeRipple.style.left = x - 75 + "px";
+          shapeRipple.style.top = y - 75 + "px";
+          shapeRipple.style.width = "150px";
+          shapeRipple.style.height = "150px";
+          shapeRipple.style.background = "rgba(255, 255, 255, 0.5)";
+
+          const shapeWave = document.createElement("div");
+          shapeWave.className = "ripple-wave";
+          shapeWave.style.left = x - 50 + "px";
+          shapeWave.style.top = y - 50 + "px";
+          shapeWave.style.width = "100px";
+          shapeWave.style.height = "100px";
+          shapeWave.style.borderColor = "rgba(255, 255, 255, 0.6)";
+
+          heroSection.appendChild(shapeRipple);
+          heroSection.appendChild(shapeWave);
+
+          // Создаем больше частиц для шаров
+          createParticles(e, heroSection);
+
+          // Воспроизводим звук клика по шару
+          playShapeClickSound();
+
+          // Анимация самого шара
+          shape.style.transform = "scale(1.3) translateY(-15px)";
+          shape.style.filter = "brightness(1.5)";
+          setTimeout(() => {
+            shape.style.transform = "";
+            shape.style.filter = "";
+          }, 300);
+
+          // Удаляем элементы после анимации
+          setTimeout(() => {
+            if (shapeRipple.parentNode) {
+              shapeRipple.parentNode.removeChild(shapeRipple);
+            }
+          }, 800);
+
+          setTimeout(() => {
+            if (shapeWave.parentNode) {
+              shapeWave.parentNode.removeChild(shapeWave);
+            }
+          }, 1200);
         });
 
-        // Волновой эффект при клике
-        function createRipple(e, element) {
-            const rect = element.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Основная волна
-            const ripple = document.createElement('div');
-            ripple.className = 'ripple';
-            ripple.style.left = x - 50 + 'px';
-            ripple.style.top = y - 50 + 'px';
-            ripple.style.width = '100px';
-            ripple.style.height = '100px';
-            
-            // Дополнительная волна
-            const rippleWave = document.createElement('div');
-            rippleWave.className = 'ripple-wave';
-            rippleWave.style.left = x - 30 + 'px';
-            rippleWave.style.top = y - 30 + 'px';
-            rippleWave.style.width = '60px';
-            rippleWave.style.height = '60px';
-            
-            element.appendChild(ripple);
-            element.appendChild(rippleWave);
-            
-            // Удаляем элементы после анимации
-            setTimeout(() => {
-                if (ripple.parentNode) {
-                    ripple.parentNode.removeChild(ripple);
-                }
-            }, 800);
-            
-            setTimeout(() => {
-                if (rippleWave.parentNode) {
-                    rippleWave.parentNode.removeChild(rippleWave);
-                }
-            }, 1200);
-        }
-
-        // Добавляем обработчик клика для hero секции
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            heroSection.addEventListener('click', (e) => {
-                // Проверяем, что клик не по кнопке или ссылке
-                if (!e.target.closest('.btn') && !e.target.closest('a')) {
-                    createRipple(e, heroSection);
-                    createParticles(e, heroSection);
-                    createTempShapes(e, heroSection);
-                    playClickSound();
-                }
-            });
-        }
-
-        // Функция создания частиц
-        function createParticles(e, element) {
-            const rect = element.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Создаем 8-12 частиц
-            const particleCount = Math.random() * 4 + 8;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Случайное смещение от точки клика
-                const offsetX = (Math.random() - 0.5) * 60;
-                const offsetY = (Math.random() - 0.5) * 60;
-                
-                particle.style.left = (x + offsetX) + 'px';
-                particle.style.top = (y + offsetY) + 'px';
-                
-                // Случайный размер
-                const size = Math.random() * 4 + 2;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                
-                // Случайная задержка анимации
-                particle.style.animationDelay = (Math.random() * 0.5) + 's';
-                
-                element.appendChild(particle);
-                
-                // Удаляем частицу после анимации
-                setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.parentNode.removeChild(particle);
-                    }
-                }, 2500);
-            }
-        }
-
-        // Эффект следования курсора
-        let cursorGlow = null;
-        
-        if (heroSection) {
-            // Создаем элемент свечения курсора
-            cursorGlow = document.createElement('div');
-            cursorGlow.className = 'cursor-glow';
-            heroSection.appendChild(cursorGlow);
-            
-            heroSection.addEventListener('mousemove', (e) => {
-                const rect = heroSection.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                cursorGlow.style.left = (x - 10) + 'px';
-                cursorGlow.style.top = (y - 10) + 'px';
-                cursorGlow.style.opacity = '1';
-            });
-            
-            heroSection.addEventListener('mouseleave', () => {
-                cursorGlow.style.opacity = '0';
-            });
-            
-            heroSection.addEventListener('mouseenter', () => {
-                cursorGlow.style.opacity = '1';
-            });
-        }
-
-        // Добавляем специальные эффекты для шаров
-        const shapes = document.querySelectorAll('.shape');
-        shapes.forEach((shape, index) => {
-            shape.addEventListener('click', (e) => {
-                e.stopPropagation();
-                
-                // Создаем более яркий эффект для шаров
-                const rect = shape.getBoundingClientRect();
-                const heroRect = heroSection.getBoundingClientRect();
-                const x = e.clientX - heroRect.left;
-                const y = e.clientY - heroRect.top;
-                
-                // Специальный эффект для шара
-                const shapeRipple = document.createElement('div');
-                shapeRipple.className = 'ripple';
-                shapeRipple.style.left = x - 75 + 'px';
-                shapeRipple.style.top = y - 75 + 'px';
-                shapeRipple.style.width = '150px';
-                shapeRipple.style.height = '150px';
-                shapeRipple.style.background = 'rgba(255, 255, 255, 0.5)';
-                
-                const shapeWave = document.createElement('div');
-                shapeWave.className = 'ripple-wave';
-                shapeWave.style.left = x - 50 + 'px';
-                shapeWave.style.top = y - 50 + 'px';
-                shapeWave.style.width = '100px';
-                shapeWave.style.height = '100px';
-                shapeWave.style.borderColor = 'rgba(255, 255, 255, 0.6)';
-                
-                heroSection.appendChild(shapeRipple);
-                heroSection.appendChild(shapeWave);
-                
-                // Создаем больше частиц для шаров
-                createParticles(e, heroSection);
-                
-                // Воспроизводим звук клика по шару
-                playShapeClickSound();
-                
-                // Анимация самого шара
-                shape.style.transform = 'scale(1.3) translateY(-15px)';
-                shape.style.filter = 'brightness(1.5)';
-                setTimeout(() => {
-                    shape.style.transform = '';
-                    shape.style.filter = '';
-                }, 300);
-                
-                // Удаляем элементы после анимации
-                setTimeout(() => {
-                    if (shapeRipple.parentNode) {
-                        shapeRipple.parentNode.removeChild(shapeRipple);
-                    }
-                }, 800);
-                
-                setTimeout(() => {
-                    if (shapeWave.parentNode) {
-                        shapeWave.parentNode.removeChild(shapeWave);
-                    }
-                }, 1200);
-            });
-
-            // Эффект при наведении на шар
-            shape.addEventListener('mouseenter', () => {
-                // Увеличиваем интенсивность свечения курсора рядом с шаром
-                if (cursorGlow) {
-                    cursorGlow.style.width = '40px';
-                    cursorGlow.style.height = '40px';
-                    cursorGlow.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%)';
-                }
-            });
-            
-            shape.addEventListener('mouseleave', () => {
-                // Возвращаем обычное свечение курсора
-                if (cursorGlow) {
-                    cursorGlow.style.width = '20px';
-                    cursorGlow.style.height = '20px';
-                    cursorGlow.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%)';
-                }
-            });
-
-            // Добавляем случайные мерцания
-            const addRandomGlow = () => {
-                shape.style.boxShadow = '0 8px 32px rgba(255, 255, 255, 0.4)';
-                setTimeout(() => {
-                    shape.style.boxShadow = '';
-                }, 1000);
-            };
-
-            // Случайные мерцания каждые 3-8 секунд
-            const randomInterval = () => {
-                const delay = Math.random() * 5000 + 3000; // 3-8 секунд
-                setTimeout(() => {
-                    addRandomGlow();
-                    randomInterval();
-                }, delay);
-            };
-            
-            // Запускаем с задержкой для каждого шара
-            setTimeout(randomInterval, index * 1000);
+        // Эффект при наведении на шар
+        shape.addEventListener("mouseenter", () => {
+          // Увеличиваем интенсивность свечения курсора рядом с шаром
+          if (cursorGlow) {
+            cursorGlow.style.width = "40px";
+            cursorGlow.style.height = "40px";
+            cursorGlow.style.background = "radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%)";
+          }
         });
 
-        // Функция создания временных шаров
-        function createTempShapes(e, element) {
-            const rect = element.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Создаем 2-4 временных шара
-            const shapeCount = Math.random() * 2 + 2;
-            
-            for (let i = 0; i < shapeCount; i++) {
-                const tempShape = document.createElement('div');
-                tempShape.className = 'temp-shape';
-                
-                // Случайный размер
-                const size = Math.random() * 40 + 20;
-                tempShape.style.width = size + 'px';
-                tempShape.style.height = size + 'px';
-                
-                // Случайное смещение от точки клика
-                const offsetX = (Math.random() - 0.5) * 200;
-                const offsetY = (Math.random() - 0.5) * 200;
-                
-                tempShape.style.left = (x + offsetX - size/2) + 'px';
-                tempShape.style.top = (y + offsetY - size/2) + 'px';
-                
-                // Случайная задержка анимации
-                tempShape.style.animationDelay = (Math.random() * 0.3) + 's';
-                
-                element.appendChild(tempShape);
-                
-                // Удаляем временный шар после анимации
-                setTimeout(() => {
-                    if (tempShape.parentNode) {
-                        tempShape.parentNode.removeChild(tempShape);
-                    }
-                }, 1800);
-            }
-        }
-
-        // Функция для создания звукового эффекта клика
-        function playClickSound() {
-            try {
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const currentTheme = document.body.getAttribute('data-theme') || 'main';
-                
-                // Создаем осциллятор для звука
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                // Настройки звука в зависимости от темы
-                let frequency, endFrequency, duration, volume, waveType;
-                
-                switch(currentTheme) {
-                    case 'dark':
-                        // Темная тема - низкий, глубокий звук
-                        frequency = 400;
-                        endFrequency = 100;
-                        duration = 0.4;
-                        volume = 0.08;
-                        waveType = 'sawtooth';
-                        break;
-                    case 'retro':
-                        // Ретро тема - пиксельный 8-битный звук
-                        frequency = 1000;
-                        endFrequency = 500;
-                        duration = 0.2;
-                        volume = 0.08;
-                        waveType = 'square';
-                        break;
-                    case 'matrix':
-                        // Matrix тема - электронный киберпанк звук
-                        frequency = 1200;
-                        endFrequency = 300;
-                        duration = 0.35;
-                        volume = 0.1;
-                        waveType = 'sawtooth';
-                        break;
-                    default: // main
-                        // Основная тема - мягкий "плеск"
-                        frequency = 800;
-                        endFrequency = 200;
-                        duration = 0.3;
-                        volume = 0.08;
-                        waveType = 'sine';
-                }
-                
-                oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-                oscillator.frequency.exponentialRampToValueAtTime(endFrequency, audioContext.currentTime + duration);
-                
-                gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-                
-                oscillator.type = waveType;
-                oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + duration);
-            } catch (error) {
-                // Если Web Audio API не поддерживается, просто игнорируем
-                console.log('Web Audio API не поддерживается');
-            }
-        }
-
-        // Функция для звука при клике на шар
-        function playShapeClickSound() {
-            try {
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const currentTheme = document.body.getAttribute('data-theme') || 'main';
-                
-                const oscillator = audioContext.createOscillator();
-                const gainNode = audioContext.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioContext.destination);
-                
-                // Настройки звука для шаров в зависимости от темы
-                let frequency, endFrequency, duration, volume, waveType;
-                
-                switch(currentTheme) {
-                    case 'dark':
-                        // Темная тема - мистический звук
-                        frequency = 800;
-                        endFrequency = 200;
-                        duration = 0.3;
-                        volume = 0.1;
-                        waveType = 'triangle';
-                        break;
-                    case 'retro':
-                        // Ретро тема - классический аркадный звук
-                        frequency = 1500;
-                        endFrequency = 750;
-                        duration = 0.15;
-                        volume = 0.1;
-                        waveType = 'square';
-                        
-                        // Добавляем второй осциллятор для более богатого ретро звука
-                        const oscillator2 = audioContext.createOscillator();
-                        const gainNode2 = audioContext.createGain();
-                        
-                        oscillator2.connect(gainNode2);
-                        gainNode2.connect(audioContext.destination);
-                        
-                        oscillator2.frequency.setValueAtTime(frequency * 0.5, audioContext.currentTime);
-                        oscillator2.frequency.exponentialRampToValueAtTime(endFrequency * 0.5, audioContext.currentTime + duration);
-                        
-                        gainNode2.gain.setValueAtTime(volume * 0.6, audioContext.currentTime);
-                        gainNode2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-                        
-                        oscillator2.type = 'square';
-                        oscillator2.start(audioContext.currentTime);
-                        oscillator2.stop(audioContext.currentTime + duration);
-                        break;
-                    case 'matrix':
-                        // Matrix тема - киберпанк звук с эхо эффектом
-                        frequency = 1800;
-                        endFrequency = 600;
-                        duration = 0.25;
-                        volume = 0.12;
-                        waveType = 'sawtooth';
-                        
-                        // Добавляем эхо эффект для Matrix темы
-                        const delayNode = audioContext.createDelay();
-                        const feedbackGain = audioContext.createGain();
-                        const delayGain = audioContext.createGain();
-                        
-                        delayNode.delayTime.value = 0.1; // 100ms задержка
-                        feedbackGain.gain.value = 0.3; // обратная связь
-                        delayGain.gain.value = 0.5; // громкость эха
-                        
-                        // Подключаем эхо цепь
-                        oscillator.connect(delayNode);
-                        delayNode.connect(feedbackGain);
-                        feedbackGain.connect(delayNode);
-                        delayNode.connect(delayGain);
-                        delayGain.connect(audioContext.destination);
-                        break;
-                    default: // main
-                        // Основная тема - более высокий и яркий звук
-                        frequency = 1200;
-                        endFrequency = 400;
-                        duration = 0.2;
-                        volume = 0.1;
-                        waveType = 'triangle';
-                }
-                
-                oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-                oscillator.frequency.exponentialRampToValueAtTime(endFrequency, audioContext.currentTime + duration);
-                
-                gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-                
-                oscillator.type = waveType;
-                oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + duration);
-            } catch (error) {
-                console.log('Web Audio API не поддерживается');
-            }
-        }
-
-        // Добавим специальный звук для переключения тем
-        function playThemeSwitchSound() {
-            try {
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const currentTheme = document.body.getAttribute('data-theme') || 'main';
-                
-                // Создаем последовательность нот для переключения темы
-                const notes = [440, 523, 659]; // A4, C5, E5 - мажорное трезвучие
-                
-                notes.forEach((frequency, index) => {
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
-                    
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-                    
-                    const startTime = audioContext.currentTime + (index * 0.1);
-                    const duration = 0.15;
-                    
-                    // Настройки в зависимости от новой темы
-                    let waveType, volume;
-                    switch(currentTheme) {
-                        case 'dark':
-                            waveType = 'sawtooth';
-                            volume = 0.06;
-                            break;
-                        case 'retro':
-                            waveType = 'square';
-                            volume = 0.08;
-                            break;
-                        case 'matrix':
-                            waveType = 'sawtooth';
-                            volume = 0.09;
-                            // Добавляем дополнительный низкочастотный тон для Matrix
-                            const bassOscillator = audioContext.createOscillator();
-                            const bassGain = audioContext.createGain();
-                            
-                            bassOscillator.connect(bassGain);
-                            bassGain.connect(audioContext.destination);
-                            
-                            bassOscillator.frequency.setValueAtTime(220, audioContext.currentTime);
-                            bassGain.gain.setValueAtTime(0.04, audioContext.currentTime);
-                            bassGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.4);
-                            
-                            bassOscillator.type = 'sawtooth';
-                            bassOscillator.start(audioContext.currentTime);
-                            bassOscillator.stop(audioContext.currentTime + 0.4);
-                            break;
-                        default:
-                            waveType = 'sine';
-                            volume = 0.05;
-                    }
-                    
-                    oscillator.frequency.setValueAtTime(frequency, startTime);
-                    gainNode.gain.setValueAtTime(volume, startTime);
-                    gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
-                    
-                    oscillator.type = waveType;
-                    oscillator.start(startTime);
-                    oscillator.stop(startTime + duration);
-                });
-            } catch (error) {
-                console.log('Web Audio API не поддерживается');
-            }
-        }
-
-        // Theme Switcher Functionality
-        const themeBtns = document.querySelectorAll('.theme-btn');
-        const body = document.body;
-        
-        // Load saved theme or default to 'main'
-        const savedTheme = localStorage.getItem('selectedTheme') || 'main';
-        body.setAttribute('data-theme', savedTheme);
-        
-        // Update active button
-        themeBtns.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.theme === savedTheme) {
-                btn.classList.add('active');
-            }
+        shape.addEventListener("mouseleave", () => {
+          // Возвращаем обычное свечение курсора
+          if (cursorGlow) {
+            cursorGlow.style.width = "20px";
+            cursorGlow.style.height = "20px";
+            cursorGlow.style.background = "radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%)";
+          }
         });
 
-        // Theme switch handler
-        themeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const theme = btn.dataset.theme;
-                
-                // Update body attribute
-                body.setAttribute('data-theme', theme);
-                
-                // Update active button
-                themeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Save to localStorage
-                localStorage.setItem('selectedTheme', theme);
-                
-                // Play theme switch sound
-                playThemeSwitchSound();
-                
-                // Add transition effect
-                body.style.transition = 'all 0.3s ease';
-                setTimeout(() => {
-                    body.style.transition = '';
-                }, 300);
-            });
-        });
-
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        // Добавляем случайные мерцания
+        const addRandomGlow = () => {
+          shape.style.boxShadow = "0 8px 32px rgba(255, 255, 255, 0.4)";
+          setTimeout(() => {
+            shape.style.boxShadow = "";
+          }, 1000);
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        }, observerOptions);
+        // Случайные мерцания каждые 3-8 секунд
+        const randomInterval = () => {
+          const delay = Math.random() * 5000 + 3000; // 3-8 секунд
+          setTimeout(() => {
+            addRandomGlow();
+            randomInterval();
+          }, delay);
+        };
 
-        document.querySelectorAll('.timeline-item, .skill-category, .about-text').forEach(el => {
-            observer.observe(el);
-        });
+        // Запускаем с задержкой для каждого шара
+        setTimeout(randomInterval, index * 1000);
+      });
 
-        // Typewriter Effect
-        class TypeWriter {
-            constructor(element, texts, speed = 100, deleteSpeed = 50, pauseTime = 2000) {
-                this.element = element;
-                this.texts = texts;
-                this.speed = speed;
-                this.deleteSpeed = deleteSpeed;
-                this.pauseTime = pauseTime;
-                this.textIndex = 0;
-                this.charIndex = 0;
-                this.isDeleting = false;
-                this.isPaused = false;
-                
-                this.type();
+      // Функция создания временных шаров
+      function createTempShapes(e, element) {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Создаем 2-4 временных шара
+        const shapeCount = Math.random() * 2 + 2;
+
+        for (let i = 0; i < shapeCount; i++) {
+          const tempShape = document.createElement("div");
+          tempShape.className = "temp-shape";
+
+          // Случайный размер
+          const size = Math.random() * 40 + 20;
+          tempShape.style.width = size + "px";
+          tempShape.style.height = size + "px";
+
+          // Случайное смещение от точки клика
+          const offsetX = (Math.random() - 0.5) * 200;
+          const offsetY = (Math.random() - 0.5) * 200;
+
+          tempShape.style.left = x + offsetX - size / 2 + "px";
+          tempShape.style.top = y + offsetY - size / 2 + "px";
+
+          // Случайная задержка анимации
+          tempShape.style.animationDelay = Math.random() * 0.3 + "s";
+
+          element.appendChild(tempShape);
+
+          // Удаляем временный шар после анимации
+          setTimeout(() => {
+            if (tempShape.parentNode) {
+              tempShape.parentNode.removeChild(tempShape);
             }
-            
-            type() {
-                const currentText = this.texts[this.textIndex];
-                
-                if (this.isPaused) {
-                    setTimeout(() => {
-                        this.isPaused = false;
-                        this.isDeleting = true;
-                        this.type();
-                    }, this.pauseTime);
-                    return;
-                }
-                
-                if (this.isDeleting) {
-                    this.element.textContent = currentText.substring(0, this.charIndex - 1);
-                    this.charIndex--;
-                    
-                    if (this.charIndex === 0) {
-                        this.isDeleting = false;
-                        this.textIndex = (this.textIndex + 1) % this.texts.length;
-                    }
-                } else {
-                    this.element.textContent = currentText.substring(0, this.charIndex + 1);
-                    this.charIndex++;
-                    
-                    if (this.charIndex === currentText.length) {
-                        this.isPaused = true;
-                    }
-                }
-                
-                const speed = this.isDeleting ? this.deleteSpeed : this.speed;
-                setTimeout(() => this.type(), speed);
+          }, 1800);
+        }
+      }
+
+      // Функция для создания звукового эффекта клика
+      function playClickSound() {
+        try {
+          const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          const currentTheme = document.body.getAttribute("data-theme") || "main";
+
+          // Создаем осциллятор для звука
+          const oscillator = audioContext.createOscillator();
+          const gainNode = audioContext.createGain();
+
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+
+          // Настройки звука в зависимости от темы
+          let frequency, endFrequency, duration, volume, waveType;
+
+          switch (currentTheme) {
+            case "dark":
+              // Темная тема - низкий, глубокий звук
+              frequency = 400;
+              endFrequency = 100;
+              duration = 0.4;
+              volume = 0.08;
+              waveType = "sawtooth";
+              break;
+            case "retro":
+              // Ретро тема - пиксельный 8-битный звук
+              frequency = 1000;
+              endFrequency = 500;
+              duration = 0.2;
+              volume = 0.08;
+              waveType = "square";
+              break;
+            case "matrix":
+              // Matrix тема - электронный киберпанк звук
+              frequency = 1200;
+              endFrequency = 300;
+              duration = 0.35;
+              volume = 0.1;
+              waveType = "sawtooth";
+              break;
+            default: // main
+              // Основная тема - мягкий "плеск"
+              frequency = 800;
+              endFrequency = 200;
+              duration = 0.3;
+              volume = 0.08;
+              waveType = "sine";
+          }
+
+          oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+          oscillator.frequency.exponentialRampToValueAtTime(endFrequency, audioContext.currentTime + duration);
+
+          gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+
+          oscillator.type = waveType;
+          oscillator.start(audioContext.currentTime);
+          oscillator.stop(audioContext.currentTime + duration);
+        } catch (error) {
+          // Если Web Audio API не поддерживается, просто игнорируем
+          console.log("Web Audio API не поддерживается");
+        }
+      }
+
+      // Функция для звука при клике на шар
+      function playShapeClickSound() {
+        try {
+          const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          const currentTheme = document.body.getAttribute("data-theme") || "main";
+
+          const oscillator = audioContext.createOscillator();
+          const gainNode = audioContext.createGain();
+
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+
+          // Настройки звука для шаров в зависимости от темы
+          let frequency, endFrequency, duration, volume, waveType;
+
+          switch (currentTheme) {
+            case "dark":
+              // Темная тема - мистический звук
+              frequency = 800;
+              endFrequency = 200;
+              duration = 0.3;
+              volume = 0.1;
+              waveType = "triangle";
+              break;
+            case "retro":
+              // Ретро тема - классический аркадный звук
+              frequency = 1500;
+              endFrequency = 750;
+              duration = 0.15;
+              volume = 0.1;
+              waveType = "square";
+
+              // Добавляем второй осциллятор для более богатого ретро звука
+              const oscillator2 = audioContext.createOscillator();
+              const gainNode2 = audioContext.createGain();
+
+              oscillator2.connect(gainNode2);
+              gainNode2.connect(audioContext.destination);
+
+              oscillator2.frequency.setValueAtTime(frequency * 0.5, audioContext.currentTime);
+              oscillator2.frequency.exponentialRampToValueAtTime(endFrequency * 0.5, audioContext.currentTime + duration);
+
+              gainNode2.gain.setValueAtTime(volume * 0.6, audioContext.currentTime);
+              gainNode2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+
+              oscillator2.type = "square";
+              oscillator2.start(audioContext.currentTime);
+              oscillator2.stop(audioContext.currentTime + duration);
+              break;
+            case "matrix":
+              // Matrix тема - киберпанк звук с эхо эффектом
+              frequency = 1800;
+              endFrequency = 600;
+              duration = 0.25;
+              volume = 0.12;
+              waveType = "sawtooth";
+
+              // Добавляем эхо эффект для Matrix темы
+              const delayNode = audioContext.createDelay();
+              const feedbackGain = audioContext.createGain();
+              const delayGain = audioContext.createGain();
+
+              delayNode.delayTime.value = 0.1; // 100ms задержка
+              feedbackGain.gain.value = 0.3; // обратная связь
+              delayGain.gain.value = 0.5; // громкость эха
+
+              // Подключаем эхо цепь
+              oscillator.connect(delayNode);
+              delayNode.connect(feedbackGain);
+              feedbackGain.connect(delayNode);
+              delayNode.connect(delayGain);
+              delayGain.connect(audioContext.destination);
+              break;
+            default: // main
+              // Основная тема - более высокий и яркий звук
+              frequency = 1200;
+              endFrequency = 400;
+              duration = 0.2;
+              volume = 0.1;
+              waveType = "triangle";
+          }
+
+          oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+          oscillator.frequency.exponentialRampToValueAtTime(endFrequency, audioContext.currentTime + duration);
+
+          gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+
+          oscillator.type = waveType;
+          oscillator.start(audioContext.currentTime);
+          oscillator.stop(audioContext.currentTime + duration);
+        } catch (error) {
+          console.log("Web Audio API не поддерживается");
+        }
+      }
+
+      // Добавим специальный звук для переключения тем
+      function playThemeSwitchSound() {
+        try {
+          const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          const currentTheme = document.body.getAttribute("data-theme") || "main";
+
+          // Создаем последовательность нот для переключения темы
+          const notes = [440, 523, 659]; // A4, C5, E5 - мажорное трезвучие
+
+          notes.forEach((frequency, index) => {
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            const startTime = audioContext.currentTime + index * 0.1;
+            const duration = 0.15;
+
+            // Настройки в зависимости от новой темы
+            let waveType, volume;
+            switch (currentTheme) {
+              case "dark":
+                waveType = "sawtooth";
+                volume = 0.06;
+                break;
+              case "retro":
+                waveType = "square";
+                volume = 0.08;
+                break;
+              case "matrix":
+                waveType = "sawtooth";
+                volume = 0.09;
+                // Добавляем дополнительный низкочастотный тон для Matrix
+                const bassOscillator = audioContext.createOscillator();
+                const bassGain = audioContext.createGain();
+
+                bassOscillator.connect(bassGain);
+                bassGain.connect(audioContext.destination);
+
+                bassOscillator.frequency.setValueAtTime(220, audioContext.currentTime);
+                bassGain.gain.setValueAtTime(0.04, audioContext.currentTime);
+                bassGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.4);
+
+                bassOscillator.type = "sawtooth";
+                bassOscillator.start(audioContext.currentTime);
+                bassOscillator.stop(audioContext.currentTime + 0.4);
+                break;
+              default:
+                waveType = "sine";
+                volume = 0.05;
             }
+
+            oscillator.frequency.setValueAtTime(frequency, startTime);
+            gainNode.gain.setValueAtTime(volume, startTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+
+            oscillator.type = waveType;
+            oscillator.start(startTime);
+            oscillator.stop(startTime + duration);
+          });
+        } catch (error) {
+          console.log("Web Audio API не поддерживается");
         }
+      }
 
-        // Initialize typewriter
-        const typewriterElement = document.querySelector('.typewriter');
-        if (typewriterElement) {
-            const texts = typewriterElement.getAttribute('data-text').split(',');
-            new TypeWriter(typewriterElement, texts, 100, 50, 3000);
+      // Theme Switcher Functionality
+      const themeBtns = document.querySelectorAll(".theme-btn");
+      const body = document.body;
+
+      // Load saved theme or default to 'main'
+      const savedTheme = localStorage.getItem("selectedTheme") || "main";
+      body.setAttribute("data-theme", savedTheme);
+
+      // Update active button
+      themeBtns.forEach((btn) => {
+        btn.classList.remove("active");
+        if (btn.dataset.theme === savedTheme) {
+          btn.classList.add("active");
         }
+      });
 
-        // Animated Counters
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target.toLocaleString();
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start).toLocaleString();
-                }
-            }, 16);
-        }
+      // Theme switch handler
+      themeBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const theme = btn.dataset.theme;
 
-        // Initialize counters when hero section is visible
-        const heroStatsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.stat-number');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-target'));
-                        animateCounter(counter, target);
-                    });
-                    heroStatsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
+          // Update body attribute
+          body.setAttribute("data-theme", theme);
 
-        const heroStats = document.querySelector('.hero-stats');
-        if (heroStats) {
-            heroStatsObserver.observe(heroStats);
-        }
+          // Update active button
+          themeBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
 
-        // Enhanced Cursor Following Effect
-        let mouseX = 0, mouseY = 0;
-        let cursorTrail = [];
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+          // Save to localStorage
+          localStorage.setItem("selectedTheme", theme);
+
+          // Play theme switch sound
+          playThemeSwitchSound();
+
+          // Add transition effect
+          body.style.transition = "all 0.3s ease";
+          setTimeout(() => {
+            body.style.transition = "";
+          }, 300);
         });
+      });
 
-        // Create floating cursor particles
-        function createCursorTrail() {
-            if (heroSection && heroSection.matches(':hover')) {
-                const particle = document.createElement('div');
-                particle.className = 'cursor-trail';
-                particle.style.left = mouseX + 'px';
-                particle.style.top = mouseY + 'px';
-                
-                document.body.appendChild(particle);
-                
+      // Animate elements on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".timeline-item, .skill-category, .about-text").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Typewriter Effect
+      class TypeWriter {
+        constructor(element, texts, speed = 100, deleteSpeed = 50, pauseTime = 2000) {
+          this.element = element;
+          this.texts = texts;
+          this.speed = speed;
+          this.deleteSpeed = deleteSpeed;
+          this.pauseTime = pauseTime;
+          this.textIndex = 0;
+          this.charIndex = 0;
+          this.isDeleting = false;
+          this.isPaused = false;
+
+          this.type();
+        }
+
+        type() {
+          const currentText = this.texts[this.textIndex];
+
+          if (this.isPaused) {
+            setTimeout(() => {
+              this.isPaused = false;
+              this.isDeleting = true;
+              this.type();
+            }, this.pauseTime);
+            return;
+          }
+
+          if (this.isDeleting) {
+            this.element.textContent = currentText.substring(0, this.charIndex - 1);
+            this.charIndex--;
+
+            if (this.charIndex === 0) {
+              this.isDeleting = false;
+              this.textIndex = (this.textIndex + 1) % this.texts.length;
+            }
+          } else {
+            this.element.textContent = currentText.substring(0, this.charIndex + 1);
+            this.charIndex++;
+
+            if (this.charIndex === currentText.length) {
+              this.isPaused = true;
+            }
+          }
+
+          const speed = this.isDeleting ? this.deleteSpeed : this.speed;
+          setTimeout(() => this.type(), speed);
+        }
+      }
+
+      // Initialize typewriter
+      const typewriterElement = document.querySelector(".typewriter");
+      if (typewriterElement) {
+        const texts = typewriterElement.getAttribute("data-text").split(",");
+        new TypeWriter(typewriterElement, texts, 100, 50, 3000);
+      }
+
+      // Animated Counters
+      function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(start).toLocaleString();
+          }
+        }, 16);
+      }
+
+      // Initialize counters when hero section is visible
+      const heroStatsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counters = entry.target.querySelectorAll(".stat-number");
+              counters.forEach((counter) => {
+                const target = parseInt(counter.getAttribute("data-target"));
+                animateCounter(counter, target);
+              });
+              heroStatsObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      const heroStats = document.querySelector(".hero-stats");
+      if (heroStats) {
+        heroStatsObserver.observe(heroStats);
+      }
+
+      // Enhanced Cursor Following Effect
+      let mouseX = 0,
+        mouseY = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      // Parallax effect for shapes
+      window.addEventListener("mousemove", (e) => {
+        if (heroSection) {
+          const shapes = heroSection.querySelectorAll(".shape");
+          const mouseX = e.clientX / window.innerWidth;
+          const mouseY = e.clientY / window.innerHeight;
+
+          shapes.forEach((shape, index) => {
+            const speed = (index + 1) * 0.5;
+            const x = (mouseX - 0.5) * speed * 20;
+            const y = (mouseY - 0.5) * speed * 20;
+
+            shape.style.transform = `translate(${x}px, ${y}px)`;
+          });
+        }
+      });
+
+      // Add scroll-triggered animations
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+
+        if (heroSection) {
+          const shapes = heroSection.querySelectorAll(".shape");
+          shapes.forEach((shape, index) => {
+            const speed = (index + 1) * 0.3;
+            shape.style.transform = `translateY(${rate * speed}px)`;
+          });
+        }
+      });
+
+      // Skills Progress Animation
+      const skillsProgressObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const skillBars = entry.target.querySelectorAll(".skill-fill");
+
+              skillBars.forEach((bar, index) => {
+                const level = parseInt(bar.getAttribute("data-level"));
+
                 setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.parentNode.removeChild(particle);
-                    }
-                }, 1000);
+                  bar.style.width = level + "%";
+                  bar.classList.add("animate");
+
+                  // Add pulsing effect for high-level skills
+                  if (level >= 90) {
+                    bar.style.animation = "skill-pulse 2s ease-in-out infinite alternate";
+                  }
+                }, index * 200); // Stagger animation
+              });
+
+              // Add animate-in class to items
+              const skillItems = entry.target.querySelectorAll(".skill-progress-item");
+              skillItems.forEach((item, index) => {
+                setTimeout(() => {
+                  item.classList.add("animate-in");
+                }, index * 100);
+              });
+
+              skillsProgressObserver.unobserve(entry.target);
             }
-            
-            requestAnimationFrame(createCursorTrail);
-        }
-        
-        createCursorTrail();
+          });
+        },
+        { threshold: 0.3 }
+      );
 
-        // Parallax effect for shapes
-        window.addEventListener('mousemove', (e) => {
-            if (heroSection) {
-                const shapes = heroSection.querySelectorAll('.shape');
-                const mouseX = e.clientX / window.innerWidth;
-                const mouseY = e.clientY / window.innerHeight;
-                
-                shapes.forEach((shape, index) => {
-                    const speed = (index + 1) * 0.5;
-                    const x = (mouseX - 0.5) * speed * 20;
-                    const y = (mouseY - 0.5) * speed * 20;
-                    
-                    shape.style.transform = `translate(${x}px, ${y}px)`;
-                });
-            }
-        });
+      const skillsProgressSection = document.querySelector(".skills-progress-section");
+      if (skillsProgressSection) {
+        skillsProgressObserver.observe(skillsProgressSection);
+      }
 
-        // Add scroll-triggered animations
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            
-            if (heroSection) {
-                const shapes = heroSection.querySelectorAll('.shape');
-                shapes.forEach((shape, index) => {
-                    const speed = (index + 1) * 0.3;
-                    shape.style.transform = `translateY(${rate * speed}px)`;
-                });
-            }
-        });
-
-        // Skills Progress Animation
-        const skillsProgressObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-fill');
-                    
-                    skillBars.forEach((bar, index) => {
-                        const level = parseInt(bar.getAttribute('data-level'));
-                        
-                        setTimeout(() => {
-                            bar.style.width = level + '%';
-                            bar.classList.add('animate');
-                            
-                            // Add pulsing effect for high-level skills
-                            if (level >= 90) {
-                                bar.style.animation = 'skill-pulse 2s ease-in-out infinite alternate';
-                            }
-                        }, index * 200); // Stagger animation
-                    });
-                    
-                    // Add animate-in class to items
-                    const skillItems = entry.target.querySelectorAll('.skill-progress-item');
-                    skillItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('animate-in');
-                        }, index * 100);
-                    });
-                    
-                    skillsProgressObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        const skillsProgressSection = document.querySelector('.skills-progress-section');
-        if (skillsProgressSection) {
-            skillsProgressObserver.observe(skillsProgressSection);
-        }
-
-        // Add skill-pulse animation to CSS dynamically
-        const style = document.createElement('style');
-        style.textContent = `
+      // Add skill-pulse animation to CSS dynamically
+      const style = document.createElement("style");
+      style.textContent = `
             @keyframes skill-pulse {
                 0% { 
                     box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
@@ -1227,7 +1203,7 @@
                 }
             }
         `;
-        document.head.appendChild(style);
+      document.head.appendChild(style);
     </script>
-</body>
-</html> 
+  </body>
+</html>
