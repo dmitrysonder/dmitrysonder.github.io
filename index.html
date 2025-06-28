@@ -395,6 +395,221 @@
             });
         });
 
+        // Волновой эффект при клике
+        function createRipple(e, element) {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Основная волна
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = x - 50 + 'px';
+            ripple.style.top = y - 50 + 'px';
+            ripple.style.width = '100px';
+            ripple.style.height = '100px';
+            
+            // Дополнительная волна
+            const rippleWave = document.createElement('div');
+            rippleWave.className = 'ripple-wave';
+            rippleWave.style.left = x - 30 + 'px';
+            rippleWave.style.top = y - 30 + 'px';
+            rippleWave.style.width = '60px';
+            rippleWave.style.height = '60px';
+            
+            element.appendChild(ripple);
+            element.appendChild(rippleWave);
+            
+            // Удаляем элементы после анимации
+            setTimeout(() => {
+                if (ripple.parentNode) {
+                    ripple.parentNode.removeChild(ripple);
+                }
+            }, 800);
+            
+            setTimeout(() => {
+                if (rippleWave.parentNode) {
+                    rippleWave.parentNode.removeChild(rippleWave);
+                }
+            }, 1200);
+        }
+
+        // Добавляем обработчик клика для hero секции
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroSection.addEventListener('click', (e) => {
+                // Проверяем, что клик не по кнопке или ссылке
+                if (!e.target.closest('.btn') && !e.target.closest('a')) {
+                    createRipple(e, heroSection);
+                    createParticles(e, heroSection);
+                }
+            });
+        }
+
+        // Функция создания частиц
+        function createParticles(e, element) {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Создаем 8-12 частиц
+            const particleCount = Math.random() * 4 + 8;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Случайное смещение от точки клика
+                const offsetX = (Math.random() - 0.5) * 60;
+                const offsetY = (Math.random() - 0.5) * 60;
+                
+                particle.style.left = (x + offsetX) + 'px';
+                particle.style.top = (y + offsetY) + 'px';
+                
+                // Случайный размер
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Случайная задержка анимации
+                particle.style.animationDelay = (Math.random() * 0.5) + 's';
+                
+                element.appendChild(particle);
+                
+                // Удаляем частицу после анимации
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 2500);
+            }
+        }
+
+        // Эффект следования курсора
+        let cursorGlow = null;
+        
+        if (heroSection) {
+            // Создаем элемент свечения курсора
+            cursorGlow = document.createElement('div');
+            cursorGlow.className = 'cursor-glow';
+            heroSection.appendChild(cursorGlow);
+            
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                cursorGlow.style.left = (x - 10) + 'px';
+                cursorGlow.style.top = (y - 10) + 'px';
+                cursorGlow.style.opacity = '1';
+            });
+            
+            heroSection.addEventListener('mouseleave', () => {
+                cursorGlow.style.opacity = '0';
+            });
+            
+            heroSection.addEventListener('mouseenter', () => {
+                cursorGlow.style.opacity = '1';
+            });
+        }
+
+        // Добавляем специальные эффекты для шаров
+        const shapes = document.querySelectorAll('.shape');
+        shapes.forEach((shape, index) => {
+            shape.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                // Создаем более яркий эффект для шаров
+                const rect = shape.getBoundingClientRect();
+                const heroRect = heroSection.getBoundingClientRect();
+                const x = e.clientX - heroRect.left;
+                const y = e.clientY - heroRect.top;
+                
+                // Специальный эффект для шара
+                const shapeRipple = document.createElement('div');
+                shapeRipple.className = 'ripple';
+                shapeRipple.style.left = x - 75 + 'px';
+                shapeRipple.style.top = y - 75 + 'px';
+                shapeRipple.style.width = '150px';
+                shapeRipple.style.height = '150px';
+                shapeRipple.style.background = 'rgba(255, 255, 255, 0.5)';
+                
+                const shapeWave = document.createElement('div');
+                shapeWave.className = 'ripple-wave';
+                shapeWave.style.left = x - 50 + 'px';
+                shapeWave.style.top = y - 50 + 'px';
+                shapeWave.style.width = '100px';
+                shapeWave.style.height = '100px';
+                shapeWave.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+                
+                heroSection.appendChild(shapeRipple);
+                heroSection.appendChild(shapeWave);
+                
+                // Создаем больше частиц для шаров
+                createParticles(e, heroSection);
+                
+                // Анимация самого шара
+                shape.style.transform = 'scale(1.3) translateY(-15px)';
+                shape.style.filter = 'brightness(1.5)';
+                setTimeout(() => {
+                    shape.style.transform = '';
+                    shape.style.filter = '';
+                }, 300);
+                
+                // Удаляем элементы после анимации
+                setTimeout(() => {
+                    if (shapeRipple.parentNode) {
+                        shapeRipple.parentNode.removeChild(shapeRipple);
+                    }
+                }, 800);
+                
+                setTimeout(() => {
+                    if (shapeWave.parentNode) {
+                        shapeWave.parentNode.removeChild(shapeWave);
+                    }
+                }, 1200);
+            });
+
+            // Эффект при наведении на шар
+            shape.addEventListener('mouseenter', () => {
+                // Увеличиваем интенсивность свечения курсора рядом с шаром
+                if (cursorGlow) {
+                    cursorGlow.style.width = '40px';
+                    cursorGlow.style.height = '40px';
+                    cursorGlow.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%)';
+                }
+            });
+            
+            shape.addEventListener('mouseleave', () => {
+                // Возвращаем обычное свечение курсора
+                if (cursorGlow) {
+                    cursorGlow.style.width = '20px';
+                    cursorGlow.style.height = '20px';
+                    cursorGlow.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%)';
+                }
+            });
+
+            // Добавляем случайные мерцания
+            const addRandomGlow = () => {
+                shape.style.boxShadow = '0 8px 32px rgba(255, 255, 255, 0.4)';
+                setTimeout(() => {
+                    shape.style.boxShadow = '';
+                }, 1000);
+            };
+
+            // Случайные мерцания каждые 3-8 секунд
+            const randomInterval = () => {
+                const delay = Math.random() * 5000 + 3000; // 3-8 секунд
+                setTimeout(() => {
+                    addRandomGlow();
+                    randomInterval();
+                }, delay);
+            };
+            
+            // Запускаем с задержкой для каждого шара
+            setTimeout(randomInterval, index * 1000);
+        });
+
         // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,

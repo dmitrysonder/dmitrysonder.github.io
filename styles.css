@@ -131,6 +131,7 @@ main {
     display: flex;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .hero-background {
@@ -153,6 +154,18 @@ main {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     animation: float 6s ease-in-out infinite;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.shape:hover {
+    transform: scale(1.2) translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .shape-1 {
@@ -163,12 +176,20 @@ main {
     animation-delay: 0s;
 }
 
+.shape-1:hover {
+    animation-duration: 3s;
+}
+
 .shape-2 {
     width: 120px;
     height: 120px;
     top: 60%;
     right: 10%;
     animation-delay: 2s;
+}
+
+.shape-2:hover {
+    animation-duration: 4s;
 }
 
 .shape-3 {
@@ -179,12 +200,168 @@ main {
     animation-delay: 4s;
 }
 
+.shape-3:hover {
+    animation-duration: 2s;
+}
+
 .shape-4 {
     width: 100px;
     height: 100px;
     top: 10%;
     right: 30%;
     animation-delay: 1s;
+}
+
+.shape-4:hover {
+    animation-duration: 5s;
+}
+
+/* Волновой эффект при клике */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    transform: scale(0);
+    animation: ripple-animation 0.8s ease-out;
+    z-index: 10;
+}
+
+@keyframes ripple-animation {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Дополнительные волны для более красивого эффекта */
+.ripple-wave {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    transform: scale(0);
+    animation: wave-animation 1.2s ease-out;
+    z-index: 9;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(6);
+        opacity: 0;
+    }
+}
+
+/* Эффект частиц */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle-float 2s ease-out forwards;
+    z-index: 8;
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Эффект следования курсора */
+.cursor-glow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.1s ease-out;
+    z-index: 5;
+    mix-blend-mode: screen;
+}
+
+/* Анимация пульсации для шаров */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.shape:nth-child(odd) {
+    animation: float 6s ease-in-out infinite, pulse-glow 4s ease-in-out infinite;
+}
+
+.shape:nth-child(even) {
+    animation: float 6s ease-in-out infinite reverse, pulse-glow 4s ease-in-out infinite 2s;
+}
+
+/* Дополнительные эффекты при наведении */
+.shape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.shape:hover::before {
+    opacity: 1;
+}
+
+/* Временные шары при клике */
+.temp-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+    animation: temp-shape-animation 1.5s ease-out forwards;
+    z-index: 7;
+}
+
+@keyframes temp-shape-animation {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.8) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 @keyframes float {
