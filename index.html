@@ -666,6 +666,7 @@
         function playClickSound() {
             try {
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const currentTheme = document.body.getAttribute('data-theme') || 'main';
                 
                 // Создаем осциллятор для звука
                 const oscillator = audioContext.createOscillator();
@@ -674,16 +675,44 @@
                 oscillator.connect(gainNode);
                 gainNode.connect(audioContext.destination);
                 
-                // Настройки звука - мягкий "плеск"
-                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-                oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.3);
+                // Настройки звука в зависимости от темы
+                let frequency, endFrequency, duration, volume, waveType;
                 
-                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+                switch(currentTheme) {
+                    case 'dark':
+                        // Темная тема - низкий, глубокий звук
+                        frequency = 400;
+                        endFrequency = 100;
+                        duration = 0.4;
+                        volume = 0.08;
+                        waveType = 'sawtooth';
+                        break;
+                    case 'retro':
+                        // Ретро тема - пиксельный 8-битный звук
+                        frequency = 1000;
+                        endFrequency = 500;
+                        duration = 0.2;
+                        volume = 0.12;
+                        waveType = 'square';
+                        break;
+                    default: // main
+                        // Основная тема - мягкий "плеск"
+                        frequency = 800;
+                        endFrequency = 200;
+                        duration = 0.3;
+                        volume = 0.1;
+                        waveType = 'sine';
+                }
                 
-                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(endFrequency, audioContext.currentTime + duration);
+                
+                gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+                
+                oscillator.type = waveType;
                 oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + 0.3);
+                oscillator.stop(audioContext.currentTime + duration);
             } catch (error) {
                 // Если Web Audio API не поддерживается, просто игнорируем
                 console.log('Web Audio API не поддерживается');
@@ -694,6 +723,7 @@
         function playShapeClickSound() {
             try {
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const currentTheme = document.body.getAttribute('data-theme') || 'main';
                 
                 const oscillator = audioContext.createOscillator();
                 const gainNode = audioContext.createGain();
@@ -701,20 +731,155 @@
                 oscillator.connect(gainNode);
                 gainNode.connect(audioContext.destination);
                 
-                // Более высокий и яркий звук для шаров
-                oscillator.frequency.setValueAtTime(1200, audioContext.currentTime);
-                oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.2);
+                // Настройки звука для шаров в зависимости от темы
+                let frequency, endFrequency, duration, volume, waveType;
                 
-                gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+                switch(currentTheme) {
+                    case 'dark':
+                        // Темная тема - мистический звук
+                        frequency = 800;
+                        endFrequency = 200;
+                        duration = 0.3;
+                        volume = 0.1;
+                        waveType = 'triangle';
+                        break;
+                    case 'retro':
+                        // Ретро тема - классический аркадный звук
+                        frequency = 1500;
+                        endFrequency = 750;
+                        duration = 0.15;
+                        volume = 0.15;
+                        waveType = 'square';
+                        
+                        // Добавляем второй осциллятор для более богатого ретро звука
+                        const oscillator2 = audioContext.createOscillator();
+                        const gainNode2 = audioContext.createGain();
+                        
+                        oscillator2.connect(gainNode2);
+                        gainNode2.connect(audioContext.destination);
+                        
+                        oscillator2.frequency.setValueAtTime(frequency * 0.5, audioContext.currentTime);
+                        oscillator2.frequency.exponentialRampToValueAtTime(endFrequency * 0.5, audioContext.currentTime + duration);
+                        
+                        gainNode2.gain.setValueAtTime(volume * 0.6, audioContext.currentTime);
+                        gainNode2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+                        
+                        oscillator2.type = 'square';
+                        oscillator2.start(audioContext.currentTime);
+                        oscillator2.stop(audioContext.currentTime + duration);
+                        break;
+                    default: // main
+                        // Основная тема - более высокий и яркий звук
+                        frequency = 1200;
+                        endFrequency = 400;
+                        duration = 0.2;
+                        volume = 0.15;
+                        waveType = 'triangle';
+                }
                 
-                oscillator.type = 'triangle';
+                oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(endFrequency, audioContext.currentTime + duration);
+                
+                gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+                
+                oscillator.type = waveType;
                 oscillator.start(audioContext.currentTime);
-                oscillator.stop(audioContext.currentTime + 0.2);
+                oscillator.stop(audioContext.currentTime + duration);
             } catch (error) {
                 console.log('Web Audio API не поддерживается');
             }
         }
+
+        // Добавим специальный звук для переключения тем
+        function playThemeSwitchSound() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const currentTheme = document.body.getAttribute('data-theme') || 'main';
+                
+                // Создаем последовательность нот для переключения темы
+                const notes = [440, 523, 659]; // A4, C5, E5 - мажорное трезвучие
+                
+                notes.forEach((frequency, index) => {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    const startTime = audioContext.currentTime + (index * 0.1);
+                    const duration = 0.15;
+                    
+                    // Настройки в зависимости от новой темы
+                    let waveType, volume;
+                    switch(currentTheme) {
+                        case 'dark':
+                            waveType = 'sawtooth';
+                            volume = 0.06;
+                            break;
+                        case 'retro':
+                            waveType = 'square';
+                            volume = 0.08;
+                            break;
+                        default:
+                            waveType = 'sine';
+                            volume = 0.05;
+                    }
+                    
+                    oscillator.frequency.setValueAtTime(frequency, startTime);
+                    gainNode.gain.setValueAtTime(volume, startTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+                    
+                    oscillator.type = waveType;
+                    oscillator.start(startTime);
+                    oscillator.stop(startTime + duration);
+                });
+            } catch (error) {
+                console.log('Web Audio API не поддерживается');
+            }
+        }
+
+        // Theme Switcher Functionality
+        const themeBtns = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        
+        // Load saved theme or default to 'main'
+        const savedTheme = localStorage.getItem('selectedTheme') || 'main';
+        body.setAttribute('data-theme', savedTheme);
+        
+        // Update active button
+        themeBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.theme === savedTheme) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Theme switch handler
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                
+                // Update body attribute
+                body.setAttribute('data-theme', theme);
+                
+                // Update active button
+                themeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Save to localStorage
+                localStorage.setItem('selectedTheme', theme);
+                
+                // Play theme switch sound
+                playThemeSwitchSound();
+                
+                // Add transition effect
+                body.style.transition = 'all 0.3s ease';
+                setTimeout(() => {
+                    body.style.transition = '';
+                }, 300);
+            });
+        });
 
         // Animate elements on scroll
         const observerOptions = {
@@ -732,45 +897,6 @@
 
         document.querySelectorAll('.timeline-item, .skill-category, .about-text').forEach(el => {
             observer.observe(el);
-        });
-
-        // Theme Switcher Functionality
-        const themeBtns = document.querySelectorAll('.theme-btn');
-        const body = document.body;
-        
-        // Load saved theme or default to 'main'
-        const savedTheme = localStorage.getItem('selectedTheme') || 'main';
-        body.setAttribute('data-theme', savedTheme);
-        
-        // Update active button
-        themeBtns.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.theme === savedTheme) {
-                btn.classList.add('active');
-            }
-        });
-        
-        // Theme switch handler
-        themeBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const theme = btn.dataset.theme;
-                
-                // Update body attribute
-                body.setAttribute('data-theme', theme);
-                
-                // Update active button
-                themeBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Save to localStorage
-                localStorage.setItem('selectedTheme', theme);
-                
-                // Add transition effect
-                body.style.transition = 'all 0.3s ease';
-                setTimeout(() => {
-                    body.style.transition = '';
-                }, 300);
-            });
         });
     </script>
 </body>
