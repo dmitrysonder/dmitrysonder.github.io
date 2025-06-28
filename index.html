@@ -11,6 +11,14 @@
     <nav>
         <div class="nav-container">
             <div class="logo">DS</div>
+            
+            <!-- Theme Switcher -->
+            <div class="theme-switcher">
+                <button class="theme-btn active" data-theme="main">Main</button>
+                <button class="theme-btn" data-theme="retro">Retro</button>
+                <button class="theme-btn" data-theme="dark">Dark</button>
+            </div>
+            
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -724,6 +732,45 @@
 
         document.querySelectorAll('.timeline-item, .skill-category, .about-text').forEach(el => {
             observer.observe(el);
+        });
+
+        // Theme Switcher Functionality
+        const themeBtns = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+        
+        // Load saved theme or default to 'main'
+        const savedTheme = localStorage.getItem('selectedTheme') || 'main';
+        body.setAttribute('data-theme', savedTheme);
+        
+        // Update active button
+        themeBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.theme === savedTheme) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Theme switch handler
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                
+                // Update body attribute
+                body.setAttribute('data-theme', theme);
+                
+                // Update active button
+                themeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Save to localStorage
+                localStorage.setItem('selectedTheme', theme);
+                
+                // Add transition effect
+                body.style.transition = 'all 0.3s ease';
+                setTimeout(() => {
+                    body.style.transition = '';
+                }, 300);
+            });
         });
     </script>
 </body>
