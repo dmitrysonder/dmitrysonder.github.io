@@ -16,7 +16,17 @@
   <body>
     <nav>
       <div class="nav-container">
-        <div class="logo">DS</div>
+
+        <!-- Bitcoin Price Widget -->
+        <div class="btc-price-widget">
+          <div class="btc-price-container">
+            <span class="btc-symbol">₿</span>
+            <div class="btc-price-info">
+              <span class="btc-price" id="btc-price">Loading...</span>
+              <span class="btc-change" id="btc-change"></span>
+            </div>
+          </div>
+        </div>
 
         <!-- Theme Switcher -->
         <div class="theme-switcher">
@@ -1204,6 +1214,134 @@
             }
         `;
       document.head.appendChild(style);
+
+      // Bitcoin Price Widget Integration
+      class BitcoinPriceWidget {
+        constructor() {
+          this.priceElement = document.getElementById('btc-price');
+          this.changeElement = document.getElementById('btc-change');
+          this.apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true';
+          this.updateInterval = 60000; // Update every minute
+          this.retryInterval = 5000; // Retry every 5 seconds on error
+          
+          this.init();
+        }
+
+        async init() {
+          await this.fetchBitcoinPrice();
+          this.startPeriodicUpdates();
+        }
+
+        async fetchBitcoinPrice() {
+          try {
+            const response = await fetch(this.apiUrl);
+            
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            const price = data.bitcoin.usd;
+            const change24h = data.bitcoin.usd_24h_change;
+            
+            this.updateWidget(price, change24h);
+            
+          } catch (error) {
+            console.error('Error fetching Bitcoin price:', error);
+            this.handleError();
+          }
+        }
+
+        updateWidget(price, change24h) {
+          // Format price with commas and appropriate decimal places
+          const formattedPrice = this.formatPrice(price);
+          
+          // Update price display
+          this.priceElement.textContent = `$${formattedPrice}`;
+          this.priceElement.classList.remove('loading');
+          
+          // Update change display
+          const changePercent = change24h.toFixed(2);
+          const changeSymbol = change24h >= 0 ? '+' : '';
+          this.changeElement.textContent = `${changeSymbol}${changePercent}%`;
+          
+          // Update change color class
+          this.changeElement.classList.remove('positive', 'negative', 'neutral');
+          if (change24h > 0) {
+            this.changeElement.classList.add('positive');
+          } else if (change24h < 0) {
+            this.changeElement.classList.add('negative');
+          } else {
+            this.changeElement.classList.add('neutral');
+          }
+
+          // Add subtle animation on price update
+          this.animateUpdate();
+        }
+
+        formatPrice(price) {
+          if (price >= 1000000) {
+            return (price / 1000000).toFixed(2) + 'M';
+          } else if (price >= 1000) {
+            return (price / 1000).toFixed(1) + 'K';
+          } else {
+            return price.toLocaleString('en-US', {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0
+            });
+          }
+        }
+
+        handleError() {
+          this.priceElement.textContent = 'Error';
+          this.priceElement.classList.remove('loading');
+          this.changeElement.textContent = '';
+          
+          // Retry after delay
+          setTimeout(() => {
+            this.priceElement.textContent = 'Retrying...';
+            this.priceElement.classList.add('loading');
+            this.fetchBitcoinPrice();
+          }, this.retryInterval);
+        }
+
+        animateUpdate() {
+          const widget = document.querySelector('.btc-price-widget');
+          if (widget) {
+            widget.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+              widget.style.transform = '';
+            }, 200);
+          }
+        }
+
+        startPeriodicUpdates() {
+          setInterval(() => {
+            this.fetchBitcoinPrice();
+          }, this.updateInterval);
+        }
+      }
+
+      // Initialize Bitcoin price widget
+      const bitcoinWidget = new BitcoinPriceWidget();
+
+      // Add click handler for Bitcoin widget
+      const btcWidget = document.querySelector('.btc-price-widget');
+      if (btcWidget) {
+        btcWidget.addEventListener('click', () => {
+          // Force update on click
+          bitcoinWidget.fetchBitcoinPrice();
+          
+          // Add click feedback
+          btcWidget.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            btcWidget.style.transform = '';
+          }, 150);
+        });
+
+        // Add tooltip
+        btcWidget.title = 'Click to refresh Bitcoin price';
+      }
     </script>
   </body>
 </html>
