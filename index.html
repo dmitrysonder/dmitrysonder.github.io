@@ -58,7 +58,9 @@
                             <span class="greeting">Hi, I'm</span>
                             <span class="name">Dmitrii Smirnov</span>
                         </h1>
-                        <h2 class="hero-subtitle">Backend Engineer & Smart Contract Developer</h2>
+                        <h2 class="hero-subtitle">
+                            <span class="typewriter" data-text="Backend Engineer,Smart Contract Developer,Node.js & TypeScript Expert,DeFi Protocol Architect">Backend Engineer & Smart Contract Developer</span>
+                        </h2>
                         <p class="hero-description">
                             Specializing in Node.js backend development, DeFi protocols, and smart contracts. 
                             8+ years of experience building scalable applications, cross-chain protocols, 
@@ -186,6 +188,71 @@
                             <span class="skill-tag">Git</span>
                             <span class="skill-tag">WebdriverIO</span>
                             <span class="skill-tag">Google Apps Script</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-progress-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Expertise Level</h2>
+                    <p class="section-subtitle">My proficiency in key technologies</p>
+                </div>
+                <div class="skills-progress-grid">
+                    <div class="skill-progress-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js & TypeScript</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-level="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Solidity & Smart Contracts</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PostgreSQL & Database Design</span>
+                            <span class="skill-level">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-level="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS & Cloud Architecture</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React & Frontend Development</span>
+                            <span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress-item">
+                        <div class="skill-info">
+                            <span class="skill-name">DeFi Protocols & Cross-chain</span>
+                            <span class="skill-level">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-level="92"></div>
                         </div>
                     </div>
                 </div>
@@ -955,6 +1022,212 @@
         document.querySelectorAll('.timeline-item, .skill-category, .about-text').forEach(el => {
             observer.observe(el);
         });
+
+        // Typewriter Effect
+        class TypeWriter {
+            constructor(element, texts, speed = 100, deleteSpeed = 50, pauseTime = 2000) {
+                this.element = element;
+                this.texts = texts;
+                this.speed = speed;
+                this.deleteSpeed = deleteSpeed;
+                this.pauseTime = pauseTime;
+                this.textIndex = 0;
+                this.charIndex = 0;
+                this.isDeleting = false;
+                this.isPaused = false;
+                
+                this.type();
+            }
+            
+            type() {
+                const currentText = this.texts[this.textIndex];
+                
+                if (this.isPaused) {
+                    setTimeout(() => {
+                        this.isPaused = false;
+                        this.isDeleting = true;
+                        this.type();
+                    }, this.pauseTime);
+                    return;
+                }
+                
+                if (this.isDeleting) {
+                    this.element.textContent = currentText.substring(0, this.charIndex - 1);
+                    this.charIndex--;
+                    
+                    if (this.charIndex === 0) {
+                        this.isDeleting = false;
+                        this.textIndex = (this.textIndex + 1) % this.texts.length;
+                    }
+                } else {
+                    this.element.textContent = currentText.substring(0, this.charIndex + 1);
+                    this.charIndex++;
+                    
+                    if (this.charIndex === currentText.length) {
+                        this.isPaused = true;
+                    }
+                }
+                
+                const speed = this.isDeleting ? this.deleteSpeed : this.speed;
+                setTimeout(() => this.type(), speed);
+            }
+        }
+
+        // Initialize typewriter
+        const typewriterElement = document.querySelector('.typewriter');
+        if (typewriterElement) {
+            const texts = typewriterElement.getAttribute('data-text').split(',');
+            new TypeWriter(typewriterElement, texts, 100, 50, 3000);
+        }
+
+        // Animated Counters
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Initialize counters when hero section is visible
+        const heroStatsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        animateCounter(counter, target);
+                    });
+                    heroStatsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats) {
+            heroStatsObserver.observe(heroStats);
+        }
+
+        // Enhanced Cursor Following Effect
+        let mouseX = 0, mouseY = 0;
+        let cursorTrail = [];
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Create floating cursor particles
+        function createCursorTrail() {
+            if (heroSection && heroSection.matches(':hover')) {
+                const particle = document.createElement('div');
+                particle.className = 'cursor-trail';
+                particle.style.left = mouseX + 'px';
+                particle.style.top = mouseY + 'px';
+                
+                document.body.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 1000);
+            }
+            
+            requestAnimationFrame(createCursorTrail);
+        }
+        
+        createCursorTrail();
+
+        // Parallax effect for shapes
+        window.addEventListener('mousemove', (e) => {
+            if (heroSection) {
+                const shapes = heroSection.querySelectorAll('.shape');
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                shapes.forEach((shape, index) => {
+                    const speed = (index + 1) * 0.5;
+                    const x = (mouseX - 0.5) * speed * 20;
+                    const y = (mouseY - 0.5) * speed * 20;
+                    
+                    shape.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            }
+        });
+
+        // Add scroll-triggered animations
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            if (heroSection) {
+                const shapes = heroSection.querySelectorAll('.shape');
+                shapes.forEach((shape, index) => {
+                    const speed = (index + 1) * 0.3;
+                    shape.style.transform = `translateY(${rate * speed}px)`;
+                });
+            }
+        });
+
+        // Skills Progress Animation
+        const skillsProgressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-fill');
+                    
+                    skillBars.forEach((bar, index) => {
+                        const level = parseInt(bar.getAttribute('data-level'));
+                        
+                        setTimeout(() => {
+                            bar.style.width = level + '%';
+                            bar.classList.add('animate');
+                            
+                            // Add pulsing effect for high-level skills
+                            if (level >= 90) {
+                                bar.style.animation = 'skill-pulse 2s ease-in-out infinite alternate';
+                            }
+                        }, index * 200); // Stagger animation
+                    });
+                    
+                    // Add animate-in class to items
+                    const skillItems = entry.target.querySelectorAll('.skill-progress-item');
+                    skillItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate-in');
+                        }, index * 100);
+                    });
+                    
+                    skillsProgressObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const skillsProgressSection = document.querySelector('.skills-progress-section');
+        if (skillsProgressSection) {
+            skillsProgressObserver.observe(skillsProgressSection);
+        }
+
+        // Add skill-pulse animation to CSS dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes skill-pulse {
+                0% { 
+                    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+                }
+                100% { 
+                    box-shadow: 0 0 25px rgba(99, 102, 241, 0.8);
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html> 
