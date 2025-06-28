@@ -442,6 +442,8 @@
                 if (!e.target.closest('.btn') && !e.target.closest('a')) {
                     createRipple(e, heroSection);
                     createParticles(e, heroSection);
+                    createTempShapes(e, heroSection);
+                    playClickSound();
                 }
             });
         }
@@ -548,6 +550,9 @@
                 // Создаем больше частиц для шаров
                 createParticles(e, heroSection);
                 
+                // Воспроизводим звук клика по шару
+                playShapeClickSound();
+                
                 // Анимация самого шара
                 shape.style.transform = 'scale(1.3) translateY(-15px)';
                 shape.style.filter = 'brightness(1.5)';
@@ -609,6 +614,99 @@
             // Запускаем с задержкой для каждого шара
             setTimeout(randomInterval, index * 1000);
         });
+
+        // Функция создания временных шаров
+        function createTempShapes(e, element) {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Создаем 2-4 временных шара
+            const shapeCount = Math.random() * 2 + 2;
+            
+            for (let i = 0; i < shapeCount; i++) {
+                const tempShape = document.createElement('div');
+                tempShape.className = 'temp-shape';
+                
+                // Случайный размер
+                const size = Math.random() * 40 + 20;
+                tempShape.style.width = size + 'px';
+                tempShape.style.height = size + 'px';
+                
+                // Случайное смещение от точки клика
+                const offsetX = (Math.random() - 0.5) * 200;
+                const offsetY = (Math.random() - 0.5) * 200;
+                
+                tempShape.style.left = (x + offsetX - size/2) + 'px';
+                tempShape.style.top = (y + offsetY - size/2) + 'px';
+                
+                // Случайная задержка анимации
+                tempShape.style.animationDelay = (Math.random() * 0.3) + 's';
+                
+                element.appendChild(tempShape);
+                
+                // Удаляем временный шар после анимации
+                setTimeout(() => {
+                    if (tempShape.parentNode) {
+                        tempShape.parentNode.removeChild(tempShape);
+                    }
+                }, 1800);
+            }
+        }
+
+        // Функция для создания звукового эффекта клика
+        function playClickSound() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Создаем осциллятор для звука
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                // Настройки звука - мягкий "плеск"
+                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.3);
+                
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+                
+                oscillator.type = 'sine';
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.3);
+            } catch (error) {
+                // Если Web Audio API не поддерживается, просто игнорируем
+                console.log('Web Audio API не поддерживается');
+            }
+        }
+
+        // Функция для звука при клике на шар
+        function playShapeClickSound() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                // Более высокий и яркий звук для шаров
+                oscillator.frequency.setValueAtTime(1200, audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.2);
+                
+                gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+                
+                oscillator.type = 'triangle';
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.2);
+            } catch (error) {
+                console.log('Web Audio API не поддерживается');
+            }
+        }
 
         // Animate elements on scroll
         const observerOptions = {
