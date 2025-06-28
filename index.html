@@ -5,37 +5,339 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dmitrii Smirnov - Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <div class="nav-container">
+            <div class="logo">DS</div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="projects/prompt-suite.html">Projects</a></li>
             </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <main>
-        <section class="hero">
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
             <div class="container">
-                <h1>Dmitrii Smirnov</h1>
-                <h2>Software Engineer</h2>
-                <p class="intro">Passionate about building innovative software solutions and creating meaningful digital experiences.</p>
-                
-                <div class="contact-links">
-                    <a href="https://github.com/dmitrysonder" target="_blank" class="btn btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        GitHub
-                    </a>
-                    <a href="mailto:dmitry.sonder@gmail.com" class="btn btn-secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        Email
-                    </a>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="greeting">Hi, I'm</span>
+                            <span class="name">Dmitrii Smirnov</span>
+                        </h1>
+                        <h2 class="hero-subtitle">Backend Engineer & Smart Contract Developer</h2>
+                        <p class="hero-description">
+                            Specializing in Node.js backend development, DeFi protocols, and smart contracts. 
+                            6+ years of experience building scalable applications, cross-chain protocols, 
+                            and automation tools that serve thousands of users worldwide.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="#about" class="btn btn-primary">
+                                Learn More
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
+                            <a href="mailto:dmitry.sonder@gmail.com" class="btn btn-secondary">
+                                Get In Touch
+                            </a>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com/dmitrysonder" target="_blank" aria-label="GitHub">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="mailto:dmitry.sonder@gmail.com" aria-label="Email">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com/in/dmitrysonder" target="_blank" aria-label="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-card">
+                            <div class="profile-avatar">
+                                <div class="avatar-placeholder">DS</div>
+                            </div>
+                            <div class="profile-info">
+                                <div class="status-indicator">
+                                    <span class="status-dot"></span>
+                                    Available for opportunities
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Backend Engineer & Smart Contract Developer</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I'm a passionate Backend Engineer and Smart Contract Developer with 8+ years of experience 
+                            building scalable web applications and DeFi protocols. My expertise spans from traditional 
+                            backend development with Node.js and TypeScript to cutting-edge blockchain technologies 
+                            including Solidity and cross-chain protocols.
+                        </p>
+                        <p>
+                            I specialize in creating robust backend systems, 
+                            REST APIs, smart contracts, and DeFi applications. I have extensive experience with AWS, 
+                            PostgreSQL, and modern JavaScript frameworks. I'm also passionate about automation, 
+                            having built comprehensive testing frameworks and CI/CD pipelines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">Tools and technologies I work with</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Backend & APIs</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">NestJS</span>
+                            <span class="skill-tag">tRPC</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">REST API</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Blockchain & DeFi</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Solidity</span>
+                            <span class="skill-tag">Hardhat</span>
+                            <span class="skill-tag">EVM</span>
+                            <span class="skill-tag">LayerZero</span>
+                            <span class="skill-tag">Axelar</span>
+                            <span class="skill-tag">Web3.js</span>
+                            <span class="skill-tag">Smart Contracts</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases & Cloud</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Google Cloud</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Prisma</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend & Tools</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">WebdriverIO</span>
+                            <span class="skill-tag">Google Apps Script</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">My professional journey</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">February 2025 - Present</div>
+                            <h3>Backend Engineer</h3>
+                            <p class="company">Fundraise Up (USA)</p>
+                            <p class="description">
+                                Developing and maintaining integrations with third-party CRM systems for a leading 
+                                fundraising platform serving nonprofits worldwide.
+                            </p>
+                            <div class="technologies">
+                                <span>Node.js</span>
+                                <span>TypeScript</span>
+                                <span>REST API</span>
+                                <span>CRM Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">January 2021 - Present</div>
+                            <h3>CTO / Senior Software Engineer</h3>
+                            <p class="company">InterSwap (DeFi Startup)</p>
+                            <p class="description">
+                                Led technical development as CTO from inception. Designed and developed core smart contracts 
+                                for cross-chain AMM protocol with LayerZero and Axelar messaging. Built backend API, managed 
+                                team of 3 developers + 1 QA, and set up AWS infrastructure with CI/CD.
+                            </p>
+                            <div class="technologies">
+                                <span>Solidity</span>
+                                <span>LayerZero</span>
+                                <span>Axelar</span>
+                                <span>NestJS</span>
+                                <span>PostgreSQL</span>
+                                <span>AWS</span>
+                                <span>Docker</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">September 2023 - July 2024</div>
+                            <h3>Backend Engineer</h3>
+                            <p class="company">Skillbox (English Learning Platform)</p>
+                            <p class="description">
+                                Developed new features and maintained English learning platform eng.skillbox.ru. 
+                                Implemented SQL triggers for event sourcing that reduced DB load by 30%. 
+                                Integrated payment services including Sber, Tinkoff, and Yandex Split.
+                            </p>
+                            <div class="technologies">
+                                <span>TypeScript</span>
+                                <span>Prisma ORM</span>
+                                <span>PostgreSQL</span>
+                                <span>tRPC</span>
+                                <span>GraphQL</span>
+                                <span>Google Cloud</span>
+                                <span>Next.js</span>
+                                <span>Redis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">February 2019 - May 2023</div>
+                            <h3>Software Engineer / CEO</h3>
+                            <p class="company">Spreadsheet Fund</p>
+                            <p class="description">
+                                Built from scratch a Google Sheets addon for hedge fund automation with 1600+ users 
+                                and 10+ public funds. Developed API adapters for 15+ crypto exchanges, payment processing 
+                                via Coinbase Commerce, and comprehensive fund management tools.
+                            </p>
+                            <div class="technologies">
+                                <span>Google Apps Script</span>
+                                <span>Node.js</span>
+                                <span>JavaScript</span>
+                                <span>HTML/CSS</span>
+                                <span>SQL</span>
+                                <span>Coinbase Commerce</span>
+                                <span>Google APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">May 2021 - January 2022</div>
+                            <h3>Senior Backend & Solidity Engineer</h3>
+                            <p class="company">Vaulty.fi (DeFi Yield Optimizer)</p>
+                            <p class="description">
+                                Developed smart contracts for DeFi yield strategies on Venus, Alpaca, and Belt.fi protocols. 
+                                Built serverless backend with AWS Lambda and DynamoDB. Created token sale, vesting, 
+                                and governance contracts, plus TheGraph subgraphs.
+                            </p>
+                            <div class="technologies">
+                                <span>Solidity</span>
+                                <span>AWS Lambda</span>
+                                <span>DynamoDB</span>
+                                <span>React</span>
+                                <span>Web3</span>
+                                <span>TheGraph</span>
+                                <span>DeFi Protocols</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">December 2019 - June 2021</div>
+                            <h3>Senior QA Automation Engineer</h3>
+                            <p class="company">EPAM Systems</p>
+                            <p class="description">
+                                Developed and maintained automation testing framework using WebdriverIO and TypeScript. 
+                                Created PostgreSQL integration module and medical data parsing tools. 
+                                Contributed to framework architecture and test development.
+                            </p>
+                            <div class="technologies">
+                                <span>WebdriverIO</span>
+                                <span>TypeScript</span>
+                                <span>PostgreSQL</span>
+                                <span>Test Automation</span>
+                                <span>QA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">October 2018 - December 2018</div>
+                            <h3>Ethereum Smart Contract Developer</h3>
+                            <p class="company">AltTokenFund / CrescoFinance</p>
+                            <p class="description">
+                                Developed backend and smart contracts for hedge fund automation with ERC20 tokens. 
+                                Created Google Sheets integration, Telegram bot for transaction signing, 
+                                and technical whitepaper. Deployed system to 2 additional public funds.
+                            </p>
+                            <div class="technologies">
+                                <span>Solidity</span>
+                                <span>Node.js</span>
+                                <span>Web3.js</span>
+                                <span>Telegram Bot</span>
+                                <span>ERC20</span>
+                                <span>Google Sheets</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -43,8 +345,82 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Dmitrii Smirnov. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Dmitrii Smirnov. All rights reserved.</p>
+                    <p>Built with passion and modern web technologies</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:dmitry.sonder@gmail.com">Contact</a>
+                    <a href="https://github.com/dmitrysonder" target="_blank">GitHub</a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    if (navLink) {
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .skill-category, .about-text').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html> 
