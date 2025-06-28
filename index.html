@@ -23,6 +23,7 @@
                 <button class="theme-btn active" data-theme="main">Main</button>
                 <button class="theme-btn" data-theme="retro">Retro</button>
                 <button class="theme-btn" data-theme="dark">Dark</button>
+                <button class="theme-btn" data-theme="matrix">Matrix</button>
             </div>
             
             <ul class="nav-links">
@@ -44,10 +45,10 @@
         <section id="home" class="hero">
             <div class="hero-background">
                 <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                    <div class="shape shape-4"></div>
+                    <div class="shape shape-1" data-matrix-code="01001"></div>
+                    <div class="shape shape-2" data-matrix-code="11010"></div>
+                    <div class="shape shape-3" data-matrix-code="10110"></div>
+                    <div class="shape shape-4" data-matrix-code="01101"></div>
                 </div>
             </div>
             <div class="container">
@@ -701,6 +702,14 @@
                         volume = 0.08;
                         waveType = 'square';
                         break;
+                    case 'matrix':
+                        // Matrix тема - электронный киберпанк звук
+                        frequency = 1200;
+                        endFrequency = 300;
+                        duration = 0.35;
+                        volume = 0.1;
+                        waveType = 'sawtooth';
+                        break;
                     default: // main
                         // Основная тема - мягкий "плеск"
                         frequency = 800;
@@ -774,6 +783,30 @@
                         oscillator2.start(audioContext.currentTime);
                         oscillator2.stop(audioContext.currentTime + duration);
                         break;
+                    case 'matrix':
+                        // Matrix тема - киберпанк звук с эхо эффектом
+                        frequency = 1800;
+                        endFrequency = 600;
+                        duration = 0.25;
+                        volume = 0.12;
+                        waveType = 'sawtooth';
+                        
+                        // Добавляем эхо эффект для Matrix темы
+                        const delayNode = audioContext.createDelay();
+                        const feedbackGain = audioContext.createGain();
+                        const delayGain = audioContext.createGain();
+                        
+                        delayNode.delayTime.value = 0.1; // 100ms задержка
+                        feedbackGain.gain.value = 0.3; // обратная связь
+                        delayGain.gain.value = 0.5; // громкость эха
+                        
+                        // Подключаем эхо цепь
+                        oscillator.connect(delayNode);
+                        delayNode.connect(feedbackGain);
+                        feedbackGain.connect(delayNode);
+                        delayNode.connect(delayGain);
+                        delayGain.connect(audioContext.destination);
+                        break;
                     default: // main
                         // Основная тема - более высокий и яркий звук
                         frequency = 1200;
@@ -826,6 +859,24 @@
                         case 'retro':
                             waveType = 'square';
                             volume = 0.08;
+                            break;
+                        case 'matrix':
+                            waveType = 'sawtooth';
+                            volume = 0.09;
+                            // Добавляем дополнительный низкочастотный тон для Matrix
+                            const bassOscillator = audioContext.createOscillator();
+                            const bassGain = audioContext.createGain();
+                            
+                            bassOscillator.connect(bassGain);
+                            bassGain.connect(audioContext.destination);
+                            
+                            bassOscillator.frequency.setValueAtTime(220, audioContext.currentTime);
+                            bassGain.gain.setValueAtTime(0.04, audioContext.currentTime);
+                            bassGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.4);
+                            
+                            bassOscillator.type = 'sawtooth';
+                            bassOscillator.start(audioContext.currentTime);
+                            bassOscillator.stop(audioContext.currentTime + 0.4);
                             break;
                         default:
                             waveType = 'sine';

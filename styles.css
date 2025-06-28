@@ -1640,4 +1640,581 @@ body[data-theme="retro"] .footer-links a {
 body[data-theme="retro"] .footer-links a:hover {
     color: #ff6b6b;
     text-shadow: 1px 1px 0px #000000;
+}
+
+body[data-theme="retro"] .footer-links a:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* Matrix Theme */
+body[data-theme="matrix"] {
+    background: #0d1117;
+    color: #00ff41;
+    font-family: 'Courier New', 'Monaco', monospace;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Matrix digital rain background */
+body[data-theme="matrix"]::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(ellipse at center, transparent 0%, rgba(0, 255, 65, 0.03) 50%, rgba(0, 255, 65, 0.1) 100%),
+        linear-gradient(0deg, transparent 24%, rgba(0, 255, 65, 0.05) 25%, rgba(0, 255, 65, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 65, 0.05) 75%, rgba(0, 255, 65, 0.05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 255, 65, 0.05) 25%, rgba(0, 255, 65, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 65, 0.05) 75%, rgba(0, 255, 65, 0.05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px, 50px 50px, 50px 50px;
+    animation: matrix-scan 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes matrix-scan {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Navigation Matrix theme */
+body[data-theme="matrix"] nav {
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    box-shadow: 0 1px 20px rgba(0, 255, 65, 0.2);
+}
+
+body[data-theme="matrix"] .logo {
+    color: #00ff41;
+    background: linear-gradient(135deg, #00ff41, #008f11);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+body[data-theme="matrix"] .nav-links a {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+    transition: all 0.3s ease;
+}
+
+body[data-theme="matrix"] .nav-links a::after {
+    background: linear-gradient(135deg, #00ff41, #008f11);
+    box-shadow: 0 0 5px #00ff41;
+}
+
+body[data-theme="matrix"] .nav-links a:hover,
+body[data-theme="matrix"] .nav-links a.active {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+body[data-theme="matrix"] .theme-switcher {
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+body[data-theme="matrix"] .theme-btn {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+}
+
+body[data-theme="matrix"] .theme-btn:hover {
+    background: rgba(0, 255, 65, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff41;
+}
+
+body[data-theme="matrix"] .theme-btn.active {
+    background: linear-gradient(135deg, #00ff41, #008f11);
+    color: #000000;
+    box-shadow: 0 2px 8px rgba(0, 255, 65, 0.5);
+    text-shadow: none;
+}
+
+/* Hero section Matrix theme */
+body[data-theme="matrix"] .hero {
+    background: 
+        radial-gradient(ellipse at top, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+    position: relative;
+}
+
+/* Matrix code rain effect */
+body[data-theme="matrix"] .hero::after {
+    content: '01001101 01100001 01110100 01110010 01101001 01111000 00100000 01110100 01101000 01100101 01101101 01100101';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: rgba(0, 255, 65, 0.1);
+    white-space: pre-wrap;
+    word-break: break-all;
+    animation: matrix-rain 15s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes matrix-rain {
+    0% { 
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+body[data-theme="matrix"] .shape {
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 65, 0.3),
+        inset 0 0 20px rgba(0, 255, 65, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="matrix"] .shape::before {
+    content: attr(data-matrix-code);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #00ff41;
+    opacity: 0.7;
+    animation: matrix-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes matrix-glow {
+    0% { opacity: 0.3; text-shadow: 0 0 5px #00ff41; }
+    100% { opacity: 1; text-shadow: 0 0 15px #00ff41, 0 0 25px #00ff41; }
+}
+
+body[data-theme="matrix"] .shape:hover {
+    transform: scale(1.2) translateY(-10px);
+    box-shadow: 
+        0 0 40px rgba(0, 255, 65, 0.6),
+        inset 0 0 30px rgba(0, 255, 65, 0.2);
+    border-color: #00ff41;
+}
+
+body[data-theme="matrix"] .hero-title {
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+body[data-theme="matrix"] .hero-title .greeting {
+    color: #00ff41;
+    animation: matrix-flicker 2s infinite;
+}
+
+@keyframes matrix-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+body[data-theme="matrix"] .hero-title .name {
+    background: linear-gradient(135deg, #00ff41, #ffffff, #00ff41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: matrix-name-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes matrix-name-glow {
+    0% { 
+        filter: drop-shadow(0 0 10px #00ff41);
+    }
+    100% { 
+        filter: drop-shadow(0 0 25px #00ff41) drop-shadow(0 0 35px #00ff41);
+    }
+}
+
+body[data-theme="matrix"] .hero-subtitle {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+body[data-theme="matrix"] .hero-description {
+    color: rgba(0, 255, 65, 0.8);
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+body[data-theme="matrix"] .btn {
+    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(0, 255, 65, 0.5);
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="matrix"] .btn::before {
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+}
+
+body[data-theme="matrix"] .btn:hover::before {
+    animation: matrix-scan-btn 0.5s ease-in-out;
+}
+
+@keyframes matrix-scan-btn {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+body[data-theme="matrix"] .btn-primary {
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.2), rgba(0, 143, 17, 0.2));
+    color: #00ff41;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+body[data-theme="matrix"] .btn-primary:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.3), rgba(0, 143, 17, 0.3));
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ff41;
+}
+
+body[data-theme="matrix"] .btn-secondary {
+    background: transparent;
+    color: #00ff41;
+    border-color: #00ff41;
+}
+
+body[data-theme="matrix"] .btn-secondary:hover {
+    background: rgba(0, 255, 65, 0.1);
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ff41;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+}
+
+body[data-theme="matrix"] .profile-card {
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+}
+
+body[data-theme="matrix"] .avatar-placeholder {
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.2), rgba(0, 143, 17, 0.2));
+    color: #00ff41;
+    border: 2px solid rgba(0, 255, 65, 0.5);
+    text-shadow: 0 0 10px #00ff41;
+    font-family: 'Courier New', monospace;
+}
+
+body[data-theme="matrix"] .status-dot {
+    background: #00ff41;
+    box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+    animation: matrix-pulse 2s infinite;
+}
+
+@keyframes matrix-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+        opacity: 1;
+    }
+    50% { 
+        box-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+        opacity: 0.7;
+    }
+}
+
+/* Sections Matrix theme */
+body[data-theme="matrix"] .section-title {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+    position: relative;
+}
+
+body[data-theme="matrix"] .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    box-shadow: 0 0 10px #00ff41;
+}
+
+body[data-theme="matrix"] .section-subtitle {
+    color: rgba(0, 255, 65, 0.7);
+    font-family: 'Courier New', monospace;
+}
+
+body[data-theme="matrix"] .about-section,
+body[data-theme="matrix"] .skills-section,
+body[data-theme="matrix"] .experience-section {
+    background: rgba(0, 255, 65, 0.02);
+    border-top: 1px solid rgba(0, 255, 65, 0.1);
+    border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+}
+
+body[data-theme="matrix"] .about-text p {
+    color: rgba(0, 255, 65, 0.8);
+    font-family: 'Courier New', monospace;
+    line-height: 1.8;
+}
+
+body[data-theme="matrix"] .skill-category {
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+body[data-theme="matrix"] .skill-category:hover {
+    border-color: rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+    transform: translateY(-5px);
+}
+
+body[data-theme="matrix"] .skill-category h3 {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+body[data-theme="matrix"] .skill-tag {
+    background: rgba(0, 255, 65, 0.1);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+body[data-theme="matrix"] .skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+body[data-theme="matrix"] .skill-tag:hover {
+    background: rgba(0, 255, 65, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ff41;
+    border-color: #00ff41;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+body[data-theme="matrix"] .skill-tag:hover::before {
+    left: 100%;
+}
+
+/* Timeline Matrix theme */
+body[data-theme="matrix"] .timeline::before {
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(0, 255, 65, 0.5) 20%, 
+        rgba(0, 255, 65, 0.8) 50%, 
+        rgba(0, 255, 65, 0.5) 80%, 
+        transparent 100%);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    animation: matrix-timeline-pulse 3s ease-in-out infinite;
+}
+
+@keyframes matrix-timeline-pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+body[data-theme="matrix"] .timeline-marker {
+    background: #00ff41;
+    border: 3px solid rgba(0, 255, 65, 0.3);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 65, 0.6),
+        inset 0 0 10px rgba(0, 255, 65, 0.3);
+    animation: matrix-marker-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes matrix-marker-glow {
+    0% { 
+        box-shadow: 0 0 20px rgba(0, 255, 65, 0.6), inset 0 0 10px rgba(0, 255, 65, 0.3);
+    }
+    100% { 
+        box-shadow: 0 0 30px rgba(0, 255, 65, 0.8), inset 0 0 15px rgba(0, 255, 65, 0.5);
+    }
+}
+
+body[data-theme="matrix"] .timeline-content {
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+}
+
+body[data-theme="matrix"] .timeline-content:hover {
+    border-color: rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+}
+
+body[data-theme="matrix"] .timeline-content h3 {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+body[data-theme="matrix"] .timeline-date {
+    color: rgba(0, 255, 65, 0.7);
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+body[data-theme="matrix"] .company {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+}
+
+body[data-theme="matrix"] .description {
+    color: rgba(0, 255, 65, 0.8);
+    font-family: 'Courier New', monospace;
+}
+
+body[data-theme="matrix"] .technologies span {
+    background: rgba(0, 255, 65, 0.1);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+body[data-theme="matrix"] .technologies span:hover {
+    background: rgba(0, 255, 65, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ff41;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+/* Footer Matrix theme */
+body[data-theme="matrix"] footer {
+    background: rgba(13, 17, 23, 0.95);
+    border-top: 1px solid rgba(0, 255, 65, 0.3);
+    box-shadow: 0 -1px 20px rgba(0, 255, 65, 0.1);
+}
+
+body[data-theme="matrix"] .footer-links a {
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+body[data-theme="matrix"] .footer-links a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 15px #00ff41, 0 0 25px #00ff41;
+}
+
+/* Matrix specific effects */
+body[data-theme="matrix"] .ripple {
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.3) 0%, transparent 70%);
+    border: 1px solid rgba(0, 255, 65, 0.5);
+}
+
+body[data-theme="matrix"] .ripple-wave {
+    border: 2px solid rgba(0, 255, 65, 0.6);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+}
+
+body[data-theme="matrix"] .particle {
+    background: #00ff41;
+    box-shadow: 0 0 10px #00ff41;
+}
+
+body[data-theme="matrix"] .cursor-glow {
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.5) 0%, transparent 70%);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+body[data-theme="matrix"] .temp-shape {
+    background: rgba(0, 255, 65, 0.2);
+    border: 1px solid rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+}
+
+/* Дополнительные Matrix эффекты */
+body[data-theme="matrix"] .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Мерцающий эффект для всех текстов в Matrix теме */
+body[data-theme="matrix"] h1,
+body[data-theme="matrix"] h2,
+body[data-theme="matrix"] h3 {
+    animation: matrix-text-flicker 3s ease-in-out infinite;
+}
+
+@keyframes matrix-text-flicker {
+    0%, 98%, 100% { opacity: 1; }
+    99% { opacity: 0.95; }
+}
+
+/* Специальный эффект для навигации в Matrix теме */
+body[data-theme="matrix"] .nav-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    animation: matrix-nav-scan 6s linear infinite;
+}
+
+@keyframes matrix-nav-scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Улучшенный эффект для кнопок Matrix темы */
+body[data-theme="matrix"] .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+body[data-theme="matrix"] .btn:hover::after {
+    opacity: 1;
+    animation: matrix-btn-glow 0.6s ease-in-out;
+}
+
+@keyframes matrix-btn-glow {
+    0% { transform: translateX(-100%) skewX(-15deg); }
+    100% { transform: translateX(100%) skewX(-15deg); }
 } 
