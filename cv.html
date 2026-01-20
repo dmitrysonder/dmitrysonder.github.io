@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dmitrii Smirnov - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --accent-light: #ebf4ff;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --border: #e2e8f0;
+            --bg-subtle: #f7fafc;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.45;
+            color: var(--text);
+            background: white;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #234e82 100%);
+            color: white;
+            padding: 22px 32px 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-main {
+            flex: 1;
+        }
+
+        .name {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 28pt;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 3px;
+        }
+
+        .title {
+            font-size: 12pt;
+            font-weight: 400;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 8.5pt;
+            line-height: 1.7;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 7px;
+        }
+
+        .contact-icon {
+            width: 13px;
+            height: 13px;
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 0;
+        }
+
+        .left-column {
+            padding: 18px 24px 18px 32px;
+            border-right: 1px solid var(--border);
+        }
+
+        .right-column {
+            padding: 18px 32px 18px 18px;
+            background: var(--bg-subtle);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 16px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1.5px solid var(--accent);
+            letter-spacing: 0.3px;
+        }
+
+        .right-column .section-title {
+            font-size: 9.5pt;
+            border-bottom-width: 1px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 9pt;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--secondary);
+        }
+
+        .date {
+            font-size: 8pt;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .company {
+            font-size: 9pt;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .description {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            line-height: 1.45;
+            margin-bottom: 5px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tech-tag {
+            font-size: 7.5pt;
+            padding: 2px 6px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category-title {
+            font-size: 8pt;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-item {
+            font-size: 7.5pt;
+            padding: 2px 6px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            color: var(--text-light);
+        }
+
+        /* Expertise Bars */
+        .expertise-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .expertise-item {
+            width: 100%;
+        }
+
+        .expertise-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 7.5pt;
+            margin-bottom: 3px;
+            color: var(--text-light);
+        }
+
+        .expertise-bar {
+            height: 5px;
+            background: white;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .expertise-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 0%, #63b3ed 100%);
+            border-radius: 2px;
+        }
+
+        /* Links */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 8pt;
+            color: var(--text-light);
+        }
+
+        .link-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .link-icon {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .cv-container {
+                box-shadow: none;
+            }
+
+            .header {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .tech-tag, .skill-item {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .expertise-fill {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .right-column {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        /* Screen shadow for preview */
+        @media screen {
+            body {
+                background: #e2e8f0;
+                padding: 20px;
+            }
+
+            .cv-container {
+                box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            }
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 8pt;
+            padding: 3px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-level {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Status badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 6px;
+            padding: 3px 9px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 3px;
+            font-size: 7.5pt;
+        }
+
+        .status-dot {
+            width: 5px;
+            height: 5px;
+            background: #68d391;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1 class="name">Dmitrii Smirnov</h1>
+                    <p class="title">Backend Engineer & Smart Contract Developer</p>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Available for opportunities
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:dmitry.sonder@gmail.com">dmitry.sonder@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <a href="https://github.com/dmitrysonder">github.com/dmitrysonder</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <a href="https://dmitrysonder.github.io">dmitrysonder.github.io</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Column - Experience -->
+            <div class="left-column">
+                <!-- Summary -->
+                <section class="section">
+                    <h2 class="section-title">Summary</h2>
+                    <p class="summary">
+                        Passionate Backend Engineer and Smart Contract Developer with 8+ years of experience building scalable web applications and DeFi protocols. Expert in Node.js, TypeScript, and Solidity with extensive experience in cross-chain protocols, AWS/VPS/GCC infrastructure, and leading technical teams.
+                    </p>
+                </section>
+
+                <!-- Experience -->
+                <section class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="job-title">Backend Engineer</span>
+                            <span class="date">Feb 2025 – Dec 2025</span>
+                        </div>
+                        <div class="company">Fundraise Up · USA</div>
+                        <p class="description">
+                            Developing and maintaining integrations with third-party CRM systems for a leading fundraising platform serving nonprofits worldwide.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">CRM Integration</span>
+                            <span class="tech-tag">Salesforce, Hubspot</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="job-title">CTO / Senior Software Engineer</span>
+                            <span class="date">Jan 2021 – Jan 2025</span>
+                        </div>
+                        <div class="company">InterSwap · DeFi Startup</div>
+                        <p class="description">
+                            Led technical development as CTO from inception. Designed and developed core smart contracts for cross-chain AMM protocol with LayerZero and Axelar messaging. Built backend API, managed team of 3 developers + 1 QA, and set up AWS infrastructure with CI/CD.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">LayerZero</span>
+                            <span class="tech-tag">Axelar</span>
+                            <span class="tech-tag">NestJS</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="job-title">Backend Engineer</span>
+                            <span class="date">Sep 2023 – Jul 2024</span>
+                        </div>
+                        <div class="company">Skillbox · English Learning Platform</div>
+                        <p class="description">
+                            Developed new features for eng.skillbox.ru platform. Implemented SQL triggers for event sourcing (30% DB load reduction). Integrated payment services including Sber, Tinkoff, and Yandex Split.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">tRPC</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">Next.js</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="job-title">Software Engineer / CEO</span>
+                            <span class="date">Feb 2019 – May 2023</span>
+                        </div>
+                        <div class="company">Spreadsheet Fund</div>
+                        <p class="description">
+                            Built from scratch a Google Sheets addon for hedge fund automation with 1600+ users and 10+ public funds. Developed API adapters for 15+ crypto exchanges.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Google Apps Script</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Coinbase Commerce</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="job-title">Senior Backend & Solidity Engineer</span>
+                            <span class="date">May 2021 – Jan 2022</span>
+                        </div>
+                        <div class="company">Vaulty.fi · DeFi Yield Optimizer</div>
+                        <p class="description">
+                            Developed smart contracts for DeFi yield strategies on Venus, Alpaca, and Belt.fi protocols. Built serverless backend with AWS Lambda. Created token sale, vesting, and governance contracts.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">Web3</span>
+                            <span class="tech-tag">TheGraph</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <span class="job-title">Senior QA Automation Engineer</span>
+                            <span class="date">Dec 2019 – Jun 2021</span>
+                        </div>
+                        <div class="company">EPAM Systems</div>
+                        <p class="description">
+                            Developed and maintained automation testing framework using WebdriverIO and TypeScript. Created PostgreSQL integration module and medical data parsing tools.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">WebdriverIO</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Test Automation</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column - Skills -->
+            <div class="right-column">
+                <!-- Core Skills -->
+                <section class="section">
+                    <h2 class="section-title">Expertise</h2>
+                    <div class="expertise-list">
+                        <div class="expertise-item">
+                            <div class="expertise-label">
+                                <span>Node.js & TypeScript</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="expertise-bar">
+                                <div class="expertise-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-label">
+                                <span>DeFi & Cross-chain</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="expertise-bar">
+                                <div class="expertise-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-label">
+                                <span>Solidity & Smart Contracts</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="expertise-bar">
+                                <div class="expertise-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-label">
+                                <span>PostgreSQL & Databases</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="expertise-bar">
+                                <div class="expertise-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-label">
+                                <span>AWS & Cloud</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="expertise-bar">
+                                <div class="expertise-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="section">
+                    <h2 class="section-title">Skills</h2>
+                    
+                    <div class="skill-category">
+                        <div class="skill-category-title">Backend</div>
+                        <div class="skill-list">
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">NestJS</span>
+                            <span class="skill-item">tRPC</span>
+                            <span class="skill-item">GraphQL</span>
+                            <span class="skill-item">REST API</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Blockchain</div>
+                        <div class="skill-list">
+                            <span class="skill-item">Solidity</span>
+                            <span class="skill-item">Hardhat</span>
+                            <span class="skill-item">EVM</span>
+                            <span class="skill-item">LayerZero</span>
+                            <span class="skill-item">Axelar</span>
+                            <span class="skill-item">Web3.js</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Databases</div>
+                        <div class="skill-list">
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">Redis</span>
+                            <span class="skill-item">Prisma</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Cloud & DevOps</div>
+                        <div class="skill-list">
+                            <span class="skill-item">AWS</span>
+                            <span class="skill-item">GCP</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Frontend</div>
+                        <div class="skill-list">
+                            <span class="skill-item">React</span>
+                            <span class="skill-item">Next.js</span>
+                            <span class="skill-item">HTML/CSS</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="section">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="language-item">
+                        <span>English</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Russian</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                </section>
+
+                <!-- Links -->
+                <section class="section">
+                    <h2 class="section-title">Links</h2>
+                    <div class="links-list">
+                        <div class="link-item">
+                            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <a href="https://github.com/dmitrysonder">GitHub</a>
+                        </div>
+                        <div class="link-item">
+                            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <a href="https://dmitrysonder.github.io">Portfolio</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
