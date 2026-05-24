@@ -258,6 +258,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--rule);
   border-block: 1px solid var(--rule);
   margin-top: clamp(40px, 5vw, 56px);
+  scroll-margin-top: calc(50vh - 60px);
 }
 .contact {
   background: var(--bg);

@@ -103,7 +103,7 @@ function Hero({ data }) {
       <Reveal className="hero-meta">
         <span><span className="marker"></span>{ui.available} · {(new Date()).getFullYear()}</span>
         <span>{data.location}</span>
-        <span>@{data.handle}</span>
+        <a href={`https://t.me/${data.handle}`} target="_blank" rel="noreferrer">@{data.handle}</a>
       </Reveal>
 
       <Reveal as="h1" className="hero-name" delay={80}>

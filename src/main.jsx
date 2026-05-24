@@ -2,16 +2,16 @@
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "theme": "light",
-  "accent": "#c2552d",
+  "accent": "#2f6b4a",
   "density": "regular",
   "showMono": true,
   "lang": "ru"
 }/*EDITMODE-END*/;
 
 const ACCENT_OPTIONS = [
-  "#c2552d", // terracotta (default)
+  "#2f6b4a", // forest (default)
+  "#c2552d", // terracotta
   "#0a0a0a", // mono ink
-  "#2f6b4a", // forest
   "#3a4be0", // electric indigo
   "#a17a3a", // brass
 ];
