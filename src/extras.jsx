@@ -217,4 +217,141 @@ function CareerTimeline({ data }) {
   );
 }
 
-Object.assign(window, { ScrollProgress, StatsBanner, SkillMarquee, CareerTimeline, CountUp });
+// ─── Compact bilingual PDF export ────────────────────────────────────
+// Builds a compact one-page resume in EN + RU, opens a print window
+// and triggers the browser's "Save as PDF" dialog.
+function downloadCompactResumePdf() {
+  const ru = (typeof getResume === "function") ? getResume("ru") : window.RESUME_RU;
+  const en = (typeof getResume === "function") ? getResume("en") : window.RESUME_EN;
+
+  const esc = (s) => String(s ?? "")
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  const renderColumn = (d, labels) => {
+    const top = d.experience.slice(0, 4);
+    const skills = [
+      ...d.skills.languages, ...d.skills.backend, ...d.skills.frontend,
+      ...d.skills.blockchain, ...d.skills.infra,
+    ];
+    return `
+      <section class="col">
+        <header class="col-head">
+          <h1>${esc(d.name.first)} ${esc(d.name.last)}</h1>
+          <div class="role">${esc(d.role)} · ${esc(d.location)}</div>
+          <div class="links">
+            <span>${esc(d.email)}</span>
+            <span>${esc(d.site)}</span>
+            <span>github.com/${esc(d.github)}</span>
+          </div>
+          <p class="intro">${esc(d.intro)}</p>
+        </header>
+
+        <h2>${esc(labels.exp)}</h2>
+        <ul class="exp">
+          ${top.map((e) => `
+            <li>
+              <div class="exp-line"><strong>${esc(e.role)}</strong> · ${esc(e.company)} <span class="year">${esc(e.year)}</span></div>
+              <div class="exp-sum">${esc(e.summary)}</div>
+            </li>`).join("")}
+        </ul>
+
+        <h2>${esc(labels.projects)}</h2>
+        <ul class="proj">
+          ${d.projects.slice(0, 3).map((p) => `
+            <li><strong>${esc(p.name)}</strong> — ${esc(p.desc)}</li>`).join("")}
+        </ul>
+
+        <h2>${esc(labels.skills)}</h2>
+        <div class="skills">${skills.map(esc).join(" · ")}</div>
+
+        <h2>${esc(labels.edu)}</h2>
+        <div>${esc(d.education.degree)}, ${esc(d.education.school)}</div>
+
+        <h2>${esc(labels.langs)}</h2>
+        <div>${d.langs.map((l) => `${esc(l.name)} (${esc(l.level)})`).join(" · ")}</div>
+      </section>
+    `;
+  };
+
+  const labelsRu = { exp: "Опыт", projects: "Проекты", skills: "Навыки", edu: "Образование", langs: "Языки" };
+  const labelsEn = { exp: "Experience", projects: "Projects", skills: "Skills", edu: "Education", langs: "Languages" };
+
+  const html = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Dmitry Smirnov · Resume (EN + RU)</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #111;
+    font-size: 9.5px;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10mm;
+  }
+  .col { break-inside: avoid; }
+  h1 {
+    font-size: 18px;
+    margin: 0 0 2px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 10px 0 4px;
+    color: #2f6b4a;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2px;
+  }
+  .role { font-size: 10px; color: #444; margin-bottom: 3px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; font-size: 8.5px; color: #666; margin-bottom: 6px; }
+  .intro { margin: 4px 0 0; font-size: 9.5px; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  ul.exp li { margin-bottom: 6px; }
+  .exp-line { font-size: 10px; }
+  .exp-line .year { color: #888; float: right; font-variant-numeric: tabular-nums; }
+  .exp-sum { font-size: 9px; color: #333; margin-top: 1px; }
+  ul.proj li { margin-bottom: 3px; font-size: 9px; }
+  .skills { font-size: 8.5px; color: #333; }
+  @media print {
+    .no-print { display: none !important; }
+  }
+  .toolbar {
+    position: fixed; top: 12px; right: 12px;
+    background: #111; color: #fff; padding: 8px 12px;
+    border-radius: 6px; font-size: 12px; cursor: pointer;
+    font-family: inherit; border: 0;
+  }
+</style>
+</head>
+<body>
+  <button class="toolbar no-print" onclick="window.print()">Save as PDF</button>
+  <div class="wrap">
+    ${renderColumn(en, labelsEn)}
+    ${renderColumn(ru, labelsRu)}
+  </div>
+  <script>
+    window.addEventListener("load", () => setTimeout(() => window.print(), 300));
+  <\/script>
+</body>
+</html>`;
+
+  const w = window.open("", "_blank");
+  if (!w) { alert("Allow pop-ups to download the PDF."); return; }
+  w.document.open();
+  w.document.write(html);
+  w.document.close();
+}
+
+Object.assign(window, { ScrollProgress, StatsBanner, SkillMarquee, CareerTimeline, CountUp, downloadCompactResumePdf });

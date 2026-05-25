@@ -93,6 +93,10 @@ function App() {
           label={t.lang === "en" ? "Print / PDF" : "Печать / PDF"}
           onClick={() => window.print()}
         />
+        <TweakButton
+          label={t.lang === "en" ? "Compact PDF (EN + RU)" : "Компактный PDF (EN + RU)"}
+          onClick={() => window.downloadCompactResumePdf()}
+        />
       </TweaksPanel>
     </>
   );
