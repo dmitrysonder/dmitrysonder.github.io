@@ -137,6 +137,13 @@ function Hero({ data }) {
           <span className="contact-label">{ui.contactStatus}</span>
           <span className="contact-value" style={{ color: "var(--accent)" }}>{ui.openToWork}</span>
         </div>
+        <button className="contact" onClick={() => window.downloadCompactResumePdf && window.downloadCompactResumePdf()}>
+          <span className="contact-label">PDF · EN + RU</span>
+          <span className="contact-value">
+            {data.lang === "en" ? "Download compact" : "Скачать компактное"}
+            <span className="arrow">↓</span>
+          </span>
+        </button>
       </Reveal>
     </section>
   );
